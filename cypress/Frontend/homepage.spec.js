@@ -3,10 +3,12 @@ describe('Homepage Test',function(){
         cy.visit('/');
         cy.homepage();
     })
-    it.skip('MVP1',function(){
+    it('MVP1',function(){
+        cy.get('.govuk-button').contains('MVP 1').click();
 
     })
     it.skip('MVP2',function(){
+        cy.get('.govuk-button').contains('MVP 2').click();
         
     })
     
