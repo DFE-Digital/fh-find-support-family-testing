@@ -10,6 +10,13 @@ beforeEach(() => {
             return false
         })
     });
+  Cypress.Commands.add('homepage',()=>{
+     cy.contains('This is a prototype used for research');
+        cy.get('input#password').click().type('family');
+        cy.get('.govuk-button').click();
+        cy.get('.govuk-heading-xl').contains('Family experience');
+        cy.contains('Legacy prototypes');
+  })
 // custom command to overwrite baseUrl if we are using localhost etc
 Cypress.Commands.overwrite('visit', (originalFn, url, options) => {
   const space = Cypress.env('SPACE');
