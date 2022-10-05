@@ -11,11 +11,12 @@ beforeEach(() => {
         })
     });
   Cypress.Commands.add('homepage',()=>{
-     cy.contains('This is a prototype used for research');
-        cy.get('input#password').click().type('family');
-        cy.get('.govuk-button').click();
-        cy.get('.govuk-heading-xl').contains('Family experience');
-        cy.contains('Legacy prototypes');
+    cy.contains('Find your local family support services');
+    cy.contains('At your local family hub you can find:');
+    cy.contains('Family support services and groups are available for:');
+    cy.contains('Find a family hub');
+    cy.contains('Find services or groups');
+    
   })
 // custom command to overwrite baseUrl if we are using localhost etc
 Cypress.Commands.overwrite('visit', (originalFn, url, options) => {
