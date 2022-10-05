@@ -29,6 +29,8 @@ describe('LandingPage Test',function(){
         cy.contains('services')
         cy.contains('groups')
         // validate Start Here button
+        cy.get("[class] .govuk-grid-column-one-half:nth-of-type(1) .nhsuk-action-link__text").click();
+        cy.contains('Find a family hub');
     })
     it('Find services or groups section validation',function(){
         cy.visit('/');
@@ -39,5 +41,7 @@ describe('LandingPage Test',function(){
         cy.contains('mental health support')
         cy.contains('help with relationships')
         // validate Start Here button
+        cy.get("[class] .govuk-grid-column-one-half:nth-of-type(2) .nhsuk-action-link__text").click();
+        cy.contains('Find services or groups');
     })
 })
