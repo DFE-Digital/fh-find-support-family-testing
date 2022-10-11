@@ -5,12 +5,12 @@ module.exports = defineConfig({
     'baseUrl': 'https://as-fh-family-experience.azurewebsites.net/',
     // 'baseUrl': 'https://fh-family-experience-prototyp.herokuapp.com/',
     // 'baseUrl': 'http://localhost:3000/', 
-    'specPattern': ['**/*.spec.js', '**/*.feature'],
+    'specPattern': ['**/*.spec.js', '**/*.feature','**/*.cy'],
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+       require('cypress-mochawesome-reporter/plugin')(on);
+       return config;
     },
     'chromeWebSecurity': false,
     'firefoxWebSecurity': false,
   },
-  
 });
