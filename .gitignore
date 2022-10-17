@@ -10,6 +10,11 @@ cypress.zip
 .babel-cache
 cypress/screenshots
 cypress/videos
+test-results.xml
+cypress/reports/*
+cypress/mochawesome-report/assets
+*.log
+.env
 # from config, compiled .js files
 packages/config/src/*.js
 

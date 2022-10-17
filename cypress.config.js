@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  reporter: "cypress-mochawesome-reporter",
   e2e: {
     'baseUrl': 'https://as-fh-family-experience.azurewebsites.net/',
     // 'baseUrl': 'https://fh-family-experience-prototyp.herokuapp.com/',
