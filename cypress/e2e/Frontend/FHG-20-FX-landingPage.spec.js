@@ -1,9 +1,5 @@
 describe('FHG-20-FX-landingPage.spec',function(){
-<<<<<<< Updated upstream
-    it('Landing page main content validation',function(){
-=======
     it('AC 1 - Landing page main content validation',function(){
->>>>>>> Stashed changes
         cy.visit('/');
         cy.homepage();
         cy.contains('You can use this service to find support and groups for you or your family.')
