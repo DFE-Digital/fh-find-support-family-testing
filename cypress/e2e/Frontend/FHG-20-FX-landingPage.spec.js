@@ -1,5 +1,9 @@
 describe('FHG-20-FX-landingPage.spec',function(){
+<<<<<<< Updated upstream
     it('Landing page main content validation',function(){
+=======
+    it('AC 1 - Landing page main content validation',function(){
+>>>>>>> Stashed changes
         cy.visit('/');
         cy.homepage();
         cy.contains('You can use this service to find support and groups for you or your family.')
@@ -20,7 +24,7 @@ describe('FHG-20-FX-landingPage.spec',function(){
         cy.contains('young people up to age 19 (up to 25 with SEND)')
         cy.contains('parents and carers')
     });
-    it('Find a family hub section validation',function(){
+    it('AC 2 - Find a family hub section validation',function(){
         cy.visit('/');
         cy.contains('Find a family hub')
         cy.contains('If you’re looking for general family services and activities near you, family hubs are a good place to start. They bring together local services in one place for families.')
@@ -32,7 +36,7 @@ describe('FHG-20-FX-landingPage.spec',function(){
         cy.get("[class] .govuk-grid-column-one-half:nth-of-type(1) .nhsuk-action-link__text").click();
         cy.contains('Find a family hub');
     })
-    it('Find services or groups section validation',function(){
+    it('Ac 3 - Find services or groups section validation',function(){
         cy.visit('/');
         cy.contains('Find a family hub')
         cy.contains('If you’re looking for a specific type of support or group, you can search for all kinds of services for families across different family hubs, such as:')
