@@ -1,4 +1,4 @@
-describe.skip('findServicesGroups Test',function(){
+describe('findServicesGroups Test',function(){
     it('Find services or groups page',function(){
         cy.visit('/');
         cy.homepage();

@@ -1,4 +1,4 @@
-describe.skip('FHG-20-FX-landingPage.spec',function(){
+describe('FHG-20-FX-landingPage.spec',function(){
     it('Landing page main content validation',function(){
         cy.visit('/');
         cy.homepage();
