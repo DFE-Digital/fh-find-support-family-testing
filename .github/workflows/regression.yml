@@ -1,4 +1,4 @@
-name: "| Azure pipeline  | Regression Pack |"
+name: "| FX Regression Pack | CIP dev |"
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ jobs:
     environment: famly-experience
     env:
       CYPRESS_BASE_URL: "https://as-fh-family-experience.azurewebsites.net/"
-    name: " 🛎️ RegressionTests - Family Experience - Azure Environment "
+    name: " 🛎️ RegressionTests - Family Experience - Azure Dev Environment "
     runs-on: ubuntu-18.04
     strategy:
       fail-fast: false
@@ -23,6 +23,7 @@ jobs:
           quiet: true
           browser: chrome
           headless: true
+          spec: "cypress/e2e/**/*.spec.js"
       - uses: actions/upload-artifact@v2
         with:
           name: report
