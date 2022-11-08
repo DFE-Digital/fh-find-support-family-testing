@@ -1,4 +1,4 @@
-describe('FHG-4-FX-familyHubsPage Test',function(){
+describe.skip('FHG-4-FX-familyHubsPage Test',function(){
     it('AC 1 ,2 family hub page validation and back button',function(){
         cy.visit('/');
         cy.homepage();
