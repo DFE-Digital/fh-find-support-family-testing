@@ -17,11 +17,13 @@ I am doing this because:
 -
 -
 
-### Have you? (optional)
+### Have you?
 
-- [ ] Reviewed view changes with stake holders
+- [ ] All Acceptance Criteria met from story 
 - [ ] Validated mobile responsive behaviour of view changes
+- [ ] Completed Cypress tests
+- [ ] Unit test coverage 
 
 ### Deployment risks (optional)
 
-- [ ]
+- [ ] 
