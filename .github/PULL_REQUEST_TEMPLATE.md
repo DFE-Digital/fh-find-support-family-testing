@@ -20,7 +20,7 @@ I am doing this because:
 ### Have you?
 
 - [ ] All Acceptance Criteria met from story 
-- [ ] Validated mobile responsive behaviour of view changes
+- [ ] Validated desktop / mobile responsive behaviour for UI changes
 - [ ] Completed Cypress tests
 - [ ] Unit test coverage 
 
