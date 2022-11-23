@@ -11,11 +11,9 @@ beforeEach(() => {
         })
     });
   Cypress.Commands.add('homepage',()=>{
-    cy.contains('Find your local family support services');
-    cy.contains('At your local family hub you can find:');
-    cy.contains('Family support services and groups are available for:');
-    cy.contains('Find a family hub');
-    cy.contains('Find services or groups');
+    cy.contains('Find local family support and services');
+    cy.contains('You can find help, services and activities in your local area, including:');
+   
     
   })
 // custom command to overwrite baseUrl if we are using localhost etc
