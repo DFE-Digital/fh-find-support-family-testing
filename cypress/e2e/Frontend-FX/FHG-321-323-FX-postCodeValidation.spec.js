@@ -1,4 +1,4 @@
-describe('FHG-321-323-FX-postCodeValidation',function(){
+describe.skip('FHG-321-323-FX-postCodeValidation',function(){
     it('AC 1 - No postcode entered + valid postcode',function(){
         cy.visit('/family-hub')
         cy.get('form#main-content-form > .govuk-button').click();
