@@ -10,8 +10,6 @@ jobs:
       CYPRESS_BASE_URL: "https://s181t01-as-fh-sd-ui-main.azurewebsites.net/"
     name: " 🛎️ RegressionTests - Family Experience - CIP test Environment "
     runs-on: ubuntu-22.04
-       node: [16]
-       
     strategy:
       fail-fast: false
     steps:
@@ -43,6 +41,7 @@ jobs:
           DATE=$(date +%d-%m-%Y)
           [ -e docs/fx/$DATE ] && rm -rf docs/fx/$DATE
           cp -a ../cypress/reports  docs/fx/$DATE
+          echo cp -a ../cypress/reports  docs/fx/$DATE
           pushd docs/fx/$DATE
           ln -s ../../assets/
           popd
