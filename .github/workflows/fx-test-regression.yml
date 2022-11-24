@@ -11,7 +11,7 @@ jobs:
     name: " 🛎️ RegressionTests - Family Experience - CIP test Environment "
     runs-on: ubuntu-22.04
        node: [16]
-       main: 'main.js'
+       
     strategy:
       fail-fast: false
     steps:
