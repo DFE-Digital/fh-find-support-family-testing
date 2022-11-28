@@ -13,9 +13,21 @@ beforeEach(() => {
   Cypress.Commands.add('homepage',()=>{
     cy.contains('Find local family support and services');
     cy.contains('You can find help, services and activities in your local area, including:');
-   
-    
   })
+  Cypress.Commands.add('searchHubsPage',()=>{
+    cy.contains('Search for local family support and services')
+    cy.contains('Use your postcode to find support, activities and services for:')
+  })
+  Cypress.Commands.add('ServiceFilterPage',()=>{
+    cy.contains('Your local family hubs, services and activities')
+  })
+  Cypress.Commands.add('searchbypostcode', (postcode) => {
+    cy.get('input#postcode').clear().type(postcode);
+    cy.get('.govuk-button').click();
+})
+
+
+
 // custom command to overwrite baseUrl if we are using localhost etc
 Cypress.Commands.overwrite('visit', (originalFn, url, options) => {
   const space = Cypress.env('SPACE');
