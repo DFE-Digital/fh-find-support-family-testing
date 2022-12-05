@@ -11,7 +11,7 @@ cypress.zip
 cypress/screenshots
 cypress/videos
 test-results.xml
-
+cypress/reports
 cypress/mochawesome-report/assets
 *.log
 .env
