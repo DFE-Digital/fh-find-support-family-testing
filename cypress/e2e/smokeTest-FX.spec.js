@@ -4,7 +4,9 @@ describe('smokeTest-FX.spec',function(){
         cy.homepage();
         cy.get('.govuk-button').click();
         cy.searchHubsPage()
-        cy.searchbypostcode('m5 4wu')
+        cy.searchbypostcode('e1 2en')
         cy.ServiceFilterPage();
+        cy.familyHubDetails();
+        cy.serviceDetails();
     })
 })
