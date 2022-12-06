@@ -41,11 +41,11 @@ jobs:
           DATE=$(date +%d-%m-%Y)
           [ -e docs/fx/$DATE ] && rm -rf docs/fx/$DATE
           cp -a ../cypress/reports  docs/fx/$DATE
-          echo cp -a ../cypress/reports  docs/fx/$DATE
           pushd docs/fx/$DATE
           ln -s ../../assets/
           popd
           git add docs .
+          
       - name: Commit todays report to reports branch
         run: |
           cd reports_repo
