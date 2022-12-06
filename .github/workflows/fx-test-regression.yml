@@ -41,17 +41,24 @@ jobs:
           DATE=$(date +%d-%m-%Y)
           [ -e docs/fx/$DATE ] && rm -rf docs/fx/$DATE
           cp -a ../cypress/reports  docs/fx/$DATE
-          echo cp -a ../cypress/reports  docs/fx/$DATE
           pushd docs/fx/$DATE
           ln -s ../../assets/
           popd
           git add docs .
+          
       - name: Commit todays report to reports branch
         run: |
           cd reports_repo
           git config --local user.email "DFE-Digital+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -m "report for $(date +%d-%m-%Y)" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: reports
+          directory: reports_repo
+
 
 
      
