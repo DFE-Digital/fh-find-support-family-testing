@@ -1,4 +1,4 @@
-name: " | Test | FX Regression Pack | CIP Test |"
+name: " | Dev | FX Regression Pack | CIP Test |"
 
 on:
   workflow_dispatch:
@@ -7,8 +7,8 @@ jobs:
   cypress-run:
     environment: famly-experience
     env:
-      CYPRESS_BASE_URL: "https://s181t01-as-fh-sd-ui-main.azurewebsites.net/"
-    name: " 🛎️ RegressionTests - Family Experience - Azure Test Environment "
+      CYPRESS_BASE_URL: "https://s181d01-as-fh-sd-ui-dev.azurewebsites.net/"
+    name: " 🛎️ RegressionTests - Family Experience - Azure Dev Environment "
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
