@@ -1,4 +1,4 @@
-name: " | Dev | FX Regression Pack | CIP Test |"
+name: " | Dev | FX Regression Pack | CIP dev |"
 
 on:
   workflow_dispatch:

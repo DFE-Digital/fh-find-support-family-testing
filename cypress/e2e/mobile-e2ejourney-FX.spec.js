@@ -7,7 +7,7 @@ describe('mobile-e2ejourney-FX.spec',function(){
         cy.homepage();
         cy.get('.govuk-button').click();
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 2en')
+        cy.searchbypostcode('M6 5UJ')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
