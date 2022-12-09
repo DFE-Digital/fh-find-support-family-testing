@@ -1,5 +1,5 @@
 describe('FHG-748-FX-searchHubsServices.spec',function(){
-    it('AC 1,2,4 - Page + No postcode entered error + valid postcode',function(){
+    it('AC 1,2,4 - Page content + No postcode entered error + valid postcode',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.get('.govuk-button').click();
@@ -8,8 +8,8 @@ describe('FHG-748-FX-searchHubsServices.spec',function(){
          // enter valid postcode and it takes to next page
         cy.searchbypostcode('m5 4wu')
         cy.ServiceFilterPage();
-        // cy.get('.govuk-back-link').click();
-        cy.go(-1)
+        cy.get('.govuk-back-link').click();
+        // cy.go(-1)
        // back link takes back to landing page
         cy.get('.govuk-back-link').click();
         cy.contains('Find local family support and services');
@@ -27,8 +27,8 @@ describe('FHG-748-FX-searchHubsServices.spec',function(){
             cy.go(-1)
         }
         // back link takes back to landing page
-        // cy.get('.govuk-back-link-or').click();
-        // cy.contains('Find local family support and services');    
+        cy.get('.govuk-back-link').click();
+        cy.contains('Find local family support and services');    
     })
     it('AC 5,6 - Valid postcode format but not recognised + valid postcode',function(){
         cy.visit('/PostcodeSearch')
@@ -38,9 +38,9 @@ describe('FHG-748-FX-searchHubsServices.spec',function(){
          // enter valid postcode and it takes to next page
         cy.searchbypostcode('m5 4wu')
         cy.ServiceFilterPage();  
-        // cy.get('.govuk-back-link-or').click();
-        // // back link takes back to landing page
-        // cy.get('.govuk-back-link-or').click();
-        // cy.contains('Find your local family support services');
+        cy.get('.govuk-back-link').click();
+        // back link takes back to landing page
+        cy.get('.govuk-back-link').click();
+        cy.contains('Find local family support and services');
     })
 })

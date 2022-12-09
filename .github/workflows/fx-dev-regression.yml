@@ -1,4 +1,4 @@
-name: "| FX Regression Pack | CIP dev |"
+name: " | Dev | FX Regression Pack | CIP Test |"
 
 on:
   workflow_dispatch:
@@ -53,6 +53,12 @@ jobs:
           git config --local user.email "DFE-Digital+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -m "report for $(date +%d-%m-%Y)" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: reports
+          directory: reports_repo
 
 
      
