@@ -68,9 +68,26 @@ Cypress.Commands.add('costFilter',(selection)=>{
     cy.get('div#filters > .govuk-button').click()
   }
    })
+// clear filters
 Cypress.Commands.add('clearFilters',()=>{
   cy.get("p > button[name='remove']").click()
 })
+// familyhubs filter
+Cypress.Commands.add('familyhubsFilter',(selection)=>{
+    cy.contains('Your local family hubs, services and activities')
+    if (selection === 'familyhubs') {
+    cy.get("input#show--3").check();
+    cy.get('div#filters > .govuk-button').click()
+  } else if (selection === 'services'){
+    cy.get('input#show--1').check()
+    cy.get('div#filters > .govuk-button').click()
+  }
+  else if (selection === 'Both'){
+    cy.get("input#show--3").check();
+    cy.get('input#show--1').check()
+    cy.get('div#filters > .govuk-button').click()
+  }
+   })
 
 
 // custom command to overwrite baseUrl if we are using localhost etc
