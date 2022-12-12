@@ -42,8 +42,8 @@ beforeEach(() => {
     cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(4) > .govuk-summary-list__value').should('be.visible')
     cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(5) > .govuk-summary-list__value').should('be.visible')
     cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(6) > .govuk-summary-list__value').should('be.visible')
-     cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(7) > .govuk-summary-list__value').should('be.visible')
-      cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(8) > .govuk-summary-list__value').should('be.visible')
+    cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(7) > .govuk-summary-list__value').should('be.visible')
+    cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(8) > .govuk-summary-list__value').should('be.visible')
     
     
   })
@@ -52,7 +52,25 @@ beforeEach(() => {
     cy.get('input#postcode').clear().type(postcode);
     cy.get('.govuk-button').click();
 })
-
+// Cost filter
+Cypress.Commands.add('costFilter',(selection)=>{
+    cy.contains('Your local family hubs, services and activities')
+    if (selection === 'Free') {
+    cy.get("input#cost--free").check();
+    cy.get('div#filters > .govuk-button').click()
+  } else if (selection === 'Paid'){
+    cy.get('input#cost--pay-to-use').check()
+    cy.get('div#filters > .govuk-button').click()
+  }
+  else if (selection === 'Both'){
+    cy.get("input#cost--free").check();
+    cy.get('input#cost--pay-to-use').check()
+    cy.get('div#filters > .govuk-button').click()
+  }
+   })
+Cypress.Commands.add('clearFilters',()=>{
+  cy.get("p > button[name='remove']").click()
+})
 
 
 // custom command to overwrite baseUrl if we are using localhost etc
