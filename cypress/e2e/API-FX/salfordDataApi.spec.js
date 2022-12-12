@@ -1,4 +1,4 @@
-describe('salfordDataApi.spec| Validate Salford API response', function() {
+describe.skip('salfordDataApi.spec| Validate Salford API response', function() {
   it('Validate Salford data api - Services + Family Hub label', function() {
     cy.request('https://s181d01-as-fh-sd-api-dev.azurewebsites.net/api/services/ce929e9f-027d-4c31-8364-af2cb857f66b')
         .then((response) => {
