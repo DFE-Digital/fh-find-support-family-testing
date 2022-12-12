@@ -39,9 +39,9 @@ jobs:
         run: |
           cd reports_repo
           DATE=$(date +%d-%m-%Y)
-          [ -e docs/fx/$DATE ] && rm -rf docs/fx/$DATE
-          cp -a ../cypress/reports  docs/fx/$DATE
-          pushd docs/fx/$DATE
+          [ -e docs/fxtest/$DATE ] && rm -rf docs/fxtest/$DATE
+          cp -a ../cypress/reports/html  docs/fxtest/$DATE
+          pushd docs/fxtest/$DATE
           ln -s ../../assets/
           popd
           git add docs .
