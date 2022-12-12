@@ -21,5 +21,6 @@ describe('FHG-749-FX-searchResultsPage.spec',function(){
         cy.get('main#main-content > div:nth-of-type(1) a').contains('M6 5UJ').click();
         cy.searchHubsPage();
     });
+    
 
 })
