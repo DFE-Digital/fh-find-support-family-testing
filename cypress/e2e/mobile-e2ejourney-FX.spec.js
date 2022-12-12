@@ -4,13 +4,20 @@ describe('mobile-e2ejourney-FX.spec',function(){
     it(`${device[i]} mobile Journey  - basic e2e journey - Start now page - page title`,function(){
         cy.viewport(`${device[i]}`)
         cy.visit('/');
+        cy.dfeBrandingMobile()
         cy.homepage();
+        cy.dfeBrandingMobile()
         cy.get('.govuk-button').click();
         cy.searchHubsPage()
+        cy.dfeBrandingMobile()
         cy.searchbypostcode('M6 5UJ')
+        cy.dfeBrandingMobile()
         cy.ServiceFilterPage();
+        cy.dfeBrandingMobile()
         cy.familyHubDetails();
+        cy.dfeBrandingMobile()
         cy.serviceDetails();
+        cy.dfeBrandingMobile()
     })
 }
 })
