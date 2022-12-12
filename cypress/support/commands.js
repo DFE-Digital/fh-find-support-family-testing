@@ -88,7 +88,25 @@ Cypress.Commands.add('familyhubsFilter',(selection)=>{
     cy.get('div#filters > .govuk-button').click()
   }
    })
+  // transport filter 
+Cypress.Commands.add('transportFilter',()=>{
+  cy.get("input[name='transport']").check()
+})
+// dfe branding 
+Cypress.Commands.add('dfeBranding',()=>{
+  cy.get('.govuk-header__logo').contains('Department for Education').click()
+  cy.contains('Department for Education')
+  cy.go(-1)
+  cy.get('.govuk-header__logo').contains('Find support for your family').click()
+  cy.contains('Find local family support and services')
 
+})
+// dfe branding mobile
+Cypress.Commands.add('dfeBrandingMobile',()=>{
+  cy.get('.govuk-header__logo').contains('Department for Education')
+  cy.get('.govuk-header__logo').contains('Find support for your family')
+
+})
 
 // custom command to overwrite baseUrl if we are using localhost etc
 Cypress.Commands.overwrite('visit', (originalFn, url, options) => {
