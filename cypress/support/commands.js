@@ -44,13 +44,29 @@ beforeEach(() => {
     cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(6) > .govuk-summary-list__value').should('be.visible')
     cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(7) > .govuk-summary-list__value').should('be.visible')
     cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(8) > .govuk-summary-list__value').should('be.visible')
-    
-    
   })
 
+// search by postcode
   Cypress.Commands.add('searchbypostcode', (postcode) => {
     cy.get('input#postcode').clear().type(postcode);
     cy.get('.govuk-button').click();
+})
+// no results for postcode
+Cypress.Commands.add('noResultsPage',()=>{
+  cy.contains('No results found')
+  cy.contains('Sorry, there are no family hubs or services listed in your area yet.')
+  cy.contains('You can check your council’s website for your local family support services.')
+  cy.get('.govuk-grid-row a').click()
+  cy.contains('Find your local council')
+  cy.go(-1)
+})
+// no results for filter
+Cypress.Commands.add('noResultsFilter',()=>{
+  cy.contains('Try another search')
+  cy.contains('You may get more results if you change the:')
+  cy.contains('age range')
+  cy.contains('distance to search within')
+  cy.contains('type of support')
 })
 // Cost filter
 Cypress.Commands.add('costFilter',(selection)=>{
@@ -91,6 +107,7 @@ Cypress.Commands.add('familyhubsFilter',(selection)=>{
   // transport filter 
 Cypress.Commands.add('transportFilter',()=>{
   cy.get("input[name='transport']").check()
+  cy.get('div#filters > .govuk-button').click()
 })
 // dfe branding 
 Cypress.Commands.add('dfeBranding',()=>{
@@ -105,7 +122,10 @@ Cypress.Commands.add('dfeBranding',()=>{
 Cypress.Commands.add('dfeBrandingMobile',()=>{
   cy.get('.govuk-header__logo').contains('Department for Education')
   cy.get('.govuk-header__logo').contains('Find support for your family')
-
+})
+Cypress.Commands.add('distanceFilter',(selection)=>{
+    cy.get(`input#search_within--${selection}`).check();
+    cy.get('div#filters > .govuk-button').click()
 })
 
 // custom command to overwrite baseUrl if we are using localhost etc
