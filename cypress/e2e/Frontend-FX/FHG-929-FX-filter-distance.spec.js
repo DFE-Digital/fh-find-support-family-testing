@@ -106,7 +106,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         // no filters tagged
         cy.get('.moj-filter__selected').contains('20 miles').should('not.exist')
     });
-    it.only('AC 6 - filter by 20 miles distance ',function(){
+    it('AC 6 - filter by 20 miles distance ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('E1 2EN')
