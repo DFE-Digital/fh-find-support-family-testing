@@ -1,6 +1,8 @@
 name: " | Dev | FX Regression Pack | CIP dev |"
 
 on:
+  schedule:
+    - cron: "30 09 * * *"
   workflow_dispatch:
 
 jobs:
