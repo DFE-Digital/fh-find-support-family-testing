@@ -13,6 +13,7 @@ beforeEach(() => {
   Cypress.Commands.add('homepage',()=>{
     cy.contains('Find local family support and services');
     cy.contains('You can find help, services and activities in your local area, including:');
+    cy.get('.govuk-button').click();
   })
   Cypress.Commands.add('searchHubsPage',()=>{
     cy.contains('Search for local family support and services')
@@ -125,6 +126,18 @@ Cypress.Commands.add('dfeBrandingMobile',()=>{
 })
 Cypress.Commands.add('distanceFilter',(selection)=>{
     cy.get(`input#search_within--${selection}`).check();
+    cy.get('div#filters > .govuk-button').click()
+})
+
+// activities filter
+Cypress.Commands.add('activitiesFilter',(selection)=>{
+  for (const [key, value] of Object.entries(selection)) {
+    // cy.get(`[id="${selection}--aafa1cc3-b984-4b10-89d5-27388c5432de"]`).check();
+    cy.get(`div:nth-of-type(${selection}) > input[name='activities']`).check(value);
+    //div:nth-of-type(3) > input[name='activities']
+    //div:nth-of-type(1) > input[name='family-support']
+    }
+    //
     cy.get('div#filters > .govuk-button').click()
 })
 

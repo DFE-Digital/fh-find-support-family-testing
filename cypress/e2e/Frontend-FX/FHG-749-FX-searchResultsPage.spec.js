@@ -1,6 +1,7 @@
 describe('FHG-749-FX-searchResultsPage.spec',function(){
     it('AC 1 ,2 search results page - family hubs + services or groups within my Local Authority area + back link',function(){
-        cy.visit('/PostcodeSearch')
+        cy.visit('/');
+        cy.homepage();
         cy.searchHubsPage()
         cy.searchbypostcode('M6 5UJ')
         cy.ServiceFilterPage();

@@ -8,13 +8,13 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         cy.serviceDetails();
         // both filters unchecked
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
-        cy.get('.govuk-grid-column-two-thirds').contains('£2.50 every session').should('exist')
+        cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
         // no filters tagged
         cy.get('.moj-filter__selected').contains('20 miles').should('exist')
         // apply free filter    
         cy.clearFilters()
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
-        cy.get('.govuk-grid-column-two-thirds').contains('£2.50 every session').should('exist')
+        cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
         // no filters tagged
         cy.get('.moj-filter__selected').contains('20 miles').should('not.exist')
     });
@@ -27,7 +27,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         // cy.serviceDetails();
         // both filters unchecked
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
-        cy.get('.govuk-grid-column-two-thirds').contains('£2.50 every session').should('exist')
+        cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
         // select 1 mile filter 
         cy.distanceFilter('1')
         cy.get('.moj-filter__selected').contains('1 mile').should('exist')
@@ -36,7 +36,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         // apply free filter    
         cy.clearFilters()
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
-        cy.get('.govuk-grid-column-two-thirds').contains('£2.50 every session').should('exist')
+        cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
         // no filters tagged
         cy.get('.moj-filter__selected').contains('20 miles').should('not.exist')
     });
@@ -49,7 +49,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         // cy.serviceDetails();
         // both filters unchecked
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
-        cy.get('.govuk-grid-column-two-thirds').contains('£2.50 every session').should('exist')
+        cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
         // select 1 mile filter 
         cy.distanceFilter('2')
         cy.get('.moj-filter__selected').contains('2 miles').should('exist')
@@ -58,7 +58,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         // apply free filter    
         cy.clearFilters()
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
-        cy.get('.govuk-grid-column-two-thirds').contains('£2.50 every session').should('exist')
+        cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
         // no filters tagged
         cy.get('.moj-filter__selected').contains('20 miles').should('not.exist')
     });
