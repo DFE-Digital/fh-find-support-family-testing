@@ -1,6 +1,7 @@
 describe('FHG-748-FX-searchHubsServices.spec',function(){
     it('AC 1,2,4 - Page content + No postcode entered error + valid postcode',function(){
-        cy.visit('/PostcodeSearch')
+        cy.visit('/');
+        cy.homepage();
         cy.searchHubsPage()
         cy.get('.govuk-button').click();
         cy.get('.govuk-error-summary').contains('There is a problem')
