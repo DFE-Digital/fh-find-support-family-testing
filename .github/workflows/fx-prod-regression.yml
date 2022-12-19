@@ -1,8 +1,6 @@
 name: " | Prod | FX Regression Pack | Prod |"
 
 on:
-  schedule:
-    - cron: "30 09 * * *"
   workflow_dispatch:
 
 jobs:
