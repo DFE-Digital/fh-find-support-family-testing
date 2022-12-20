@@ -3,7 +3,7 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
        cy.visit('/');
         cy.homepage();
         cy.searchHubsPage()
-        cy.searchbypostcode('M6 5UJ')
+        cy.searchbypostcode('e1 5jy')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
@@ -11,7 +11,7 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
         cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
         // no filters tagged
-         cy.get('.moj-filter__selected').contains('Pay to use').should('not.exist')
+        cy.get('.moj-filter__selected').contains('Pay to use').should('not.exist')
         cy.get('.moj-filter__selected').contains('Free').should('not.exist')
         // apply free filter    
         cy.costFilter('Free')
@@ -22,7 +22,7 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
     it('AC 2 Cost filter - Paid - Clear filers',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('M6 5UJ')
+        cy.searchbypostcode('e1 5jy')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails(); // both filters unchecked
@@ -45,7 +45,7 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
     it('AC 4 Cost filter - Both , clear each filter ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('M6 5UJ')
+        cy.searchbypostcode('e1 5jy')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails(); // both filters unchecked

@@ -4,7 +4,7 @@ describe('e2e001.FX.spec',function(){
         cy.homepage();
         cy.get('.govuk-button').click();
         cy.searchHubsPage()
-        cy.searchbypostcode('M6 5UJ')
+        cy.searchbypostcode('e1 5jy')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();

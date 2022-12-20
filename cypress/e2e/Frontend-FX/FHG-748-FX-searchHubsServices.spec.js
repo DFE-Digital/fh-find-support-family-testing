@@ -3,11 +3,11 @@ describe('FHG-748-FX-searchHubsServices.spec',function(){
         cy.visit('/');
         cy.homepage();
         cy.searchHubsPage()
-        cy.get('.govuk-button').click();
+        cy.get('form > .govuk-button').click();
         cy.get('.govuk-error-summary').contains('There is a problem')
         cy.get('.govuk-error-message').contains('You need to enter a postcode, like AA1 1AA')
          // enter valid postcode and it takes to next page
-        cy.searchbypostcode('m27 8ss')
+        cy.searchbypostcode('e1 5jy')
         cy.ServiceFilterPage();
         cy.get('.govuk-back-link').click();
         // cy.go(-1)
@@ -23,7 +23,7 @@ describe('FHG-748-FX-searchHubsServices.spec',function(){
             cy.get('.govuk-error-summary').contains('There is a problem')
             cy.get('.govuk-error-summary').contains('You need to enter a valid postcode, like AA1 1AA')
             // enter valid postcode and it takes to next page
-            cy.searchbypostcode('m5 4wu')
+            cy.searchbypostcode('e1 5jy')
             cy.ServiceFilterPage();
             cy.go(-1)
         }
@@ -37,11 +37,11 @@ describe('FHG-748-FX-searchHubsServices.spec',function(){
         cy.get('.govuk-error-summary').contains('There is a problem')
         cy.get('.govuk-error-summary').contains('Your postcode is not recognised - try another one')
          // enter valid postcode and it takes to next page
-        cy.searchbypostcode('m5 4wu')
+        cy.searchbypostcode('e1 5jy')
         cy.ServiceFilterPage();  
         cy.get('.govuk-back-link').click();
         // back link takes back to landing page
-        cy.get('.govuk-back-link').click();
+       cy.get('.govuk-back-link').click();
         cy.contains('Find local family support and services');
     })
 })

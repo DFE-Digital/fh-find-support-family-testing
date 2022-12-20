@@ -13,7 +13,7 @@ beforeEach(() => {
   Cypress.Commands.add('homepage',()=>{
     cy.contains('Find local family support and services');
     cy.contains('You can find help, services and activities in your local area, including:');
-    cy.get('.govuk-button').click();
+    cy.get('.govuk-button.govuk-button--start').click();
   })
   Cypress.Commands.add('searchHubsPage',()=>{
     cy.contains('Search for local family support and services')
@@ -50,14 +50,14 @@ beforeEach(() => {
 // search by postcode
   Cypress.Commands.add('searchbypostcode', (postcode) => {
     cy.get('input#postcode').clear().type(postcode);
-    cy.get('.govuk-button').click();
+    cy.get('.govuk-button').contains('Search').click();
 })
 // no results for postcode
 Cypress.Commands.add('noResultsPage',()=>{
   cy.contains('No results found')
   cy.contains('Sorry, there are no family hubs or services listed in your area yet.')
   cy.contains('You can check your council’s website for your local family support services.')
-  cy.get('.govuk-grid-row a').click()
+  cy.get(':nth-child(3) > a').click()
   cy.contains('Find your local council')
   cy.go(-1)
 })
@@ -130,15 +130,22 @@ Cypress.Commands.add('distanceFilter',(selection)=>{
 })
 
 // activities filter
-Cypress.Commands.add('activitiesFilter',(selection)=>{
-  for (const [key, value] of Object.entries(selection)) {
-    // cy.get(`[id="${selection}--aafa1cc3-b984-4b10-89d5-27388c5432de"]`).check();
-    cy.get(`div:nth-of-type(${selection}) > input[name='activities']`).check(value);
-    //div:nth-of-type(3) > input[name='activities']
-    //div:nth-of-type(1) > input[name='family-support']
-    }
-    //
+Cypress.Commands.add('activitiesFilter',(selection1,selection2)=>{
+   cy.get(`:nth-child(${selection1}) > .govuk-fieldset > .govuk-checkboxes > :nth-child(${selection2}) > .govuk-label`,{ multiple: true }).click()
     cy.get('div#filters > .govuk-button').click()
+})
+//cy.get('#family-support--f11a9fdd-de48-499a-ac2d-2bd01dfc22f1')
+// activities filter 2
+Cypress.Commands.add('activitiesFilter2',(selection1,selection2,selection3)=>{
+   cy.get(`:nth-child(${selection1}) > .govuk-fieldset > .govuk-checkboxes > :nth-child(${selection2}) > .govuk-label`,{ multiple: true }).contains(`${selection3}`).click()
+    cy.get('div#filters > .govuk-button').click()
+})
+
+
+// find item using pagination
+Cypress.Commands.add('findItem',(pageNumber)=>{
+  cy.get(`:nth-child(${pageNumber}) > .govuk-link`).click()
+  // cy.get(`[value="${pageNumber}"]`)
 })
 
 // custom command to overwrite baseUrl if we are using localhost etc
