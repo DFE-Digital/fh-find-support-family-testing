@@ -1,8 +1,8 @@
 describe('FHG-925-FX-filter-familyHubsServices.spec - Search by filter - familyhubs services',function(){
-    it('AC 1,3 familyhubs filter - No filter + Free filer',function(){
+    it('AC 1,3 familyhubs filter - No filter + Family hubs filter',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('M6 5UJ')
+        cy.searchbypostcode('e1 5jy')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
@@ -21,7 +21,7 @@ describe('FHG-925-FX-filter-familyHubsServices.spec - Search by filter - familyh
     it('AC 2 Service and groups- filter',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('M6 5UJ')
+        cy.searchbypostcode('e1 5jy')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails(); 
@@ -41,7 +41,7 @@ describe('FHG-925-FX-filter-familyHubsServices.spec - Search by filter - familyh
     it('AC 4 family hubs & Service and groups filter - Both , clear each filter ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('M6 5UJ')
+        cy.searchbypostcode('e1 5jy')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
