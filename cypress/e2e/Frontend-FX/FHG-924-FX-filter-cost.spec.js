@@ -1,5 +1,5 @@
 describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
-    it('AC 1,3 Cost filter - No filter + Free filter',function(){
+    it('AC 1,3 Cost filter - No filter - Free filter',function(){
        cy.visit('/');
         cy.homepage();
         cy.searchHubsPage()
@@ -19,7 +19,7 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
         cy.get('.moj-filter__selected').contains('Free')
     });
-    it('AC 2 Cost filter - Paid - Clear filers',function(){
+    it('AC 2 Cost filter - Paid filter - Clear filters',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('e1 5jy')
