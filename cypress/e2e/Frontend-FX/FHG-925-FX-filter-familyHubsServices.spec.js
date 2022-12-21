@@ -29,7 +29,7 @@ describe('FHG-925-FX-filter-familyHubsServices.spec - Search by filter - familyh
         cy.get('.govuk-grid-column-two-thirds').contains('Family hub').should('exist')
         cy.get('.govuk-grid-column-two-thirds').contains('Service and groups').should('exist')
         // no filters tagged
-         cy.get('.moj-filter__selected').contains('Services and groups').should('not.exist')
+        cy.get('.moj-filter__selected').contains('Services and groups').should('not.exist')
         cy.get('.moj-filter__selected').contains('Family hubs').should('not.exist')
         // apply services filter    
         cy.familyhubsFilter('services')
@@ -53,7 +53,7 @@ describe('FHG-925-FX-filter-familyHubsServices.spec - Search by filter - familyh
         cy.get('.moj-filter__selected').contains('Family hubs').should('not.exist')
         // apply both filters   
         cy.familyhubsFilter('Both')
-        cy.get('.govuk-grid-column-two-thirds').contains('Family hub').should('exist')
+        cy.get('.app-family-hub').should('not.exist')
         cy.get('.govuk-grid-column-two-thirds').contains('Service and groups').should('exist')
         cy.get('.moj-filter__selected').contains('Services and groups')
         cy.get('.moj-filter__selected').contains('Family hubs')
@@ -70,8 +70,16 @@ describe('FHG-925-FX-filter-familyHubsServices.spec - Search by filter - familyh
         // both filters unchecked
         cy.get('.govuk-grid-column-two-thirds').contains('Family hub').should('exist')
         cy.get('.govuk-grid-column-two-thirds').contains('Service and groups').should('exist')
-
-
+    });
+    it('FHG-1634 - Post code with no Family hubs diaplays services',function(){
+        cy.visit('/PostcodeSearch')
+        cy.searchHubsPage()
+        cy.searchbypostcode('m27 8ss')
+        cy.get('.govuk-grid-column-two-thirds').contains('Family hub').should('not.exist')
+        cy.get('.govuk-grid-column-two-thirds').contains('Service and groups').should('exist')
+        // no filters tagged
+        cy.get('.moj-filter__selected').contains('Service and groups').should('not.exist')
+        cy.get('.moj-filter__selected').contains('Family hubs').should('not.exist')
     });
     
 })
