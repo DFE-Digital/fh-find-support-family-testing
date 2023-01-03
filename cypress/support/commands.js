@@ -46,6 +46,21 @@ beforeEach(() => {
     cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(7) > .govuk-summary-list__value').should('be.visible')
     cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(8) > .govuk-summary-list__value').should('be.visible')
   })
+  // cookies text
+  Cypress.Commands.add('cookies',()=>{
+     cy.contains('Cookies on find local family support')
+      cy.contains('We use some essential cookies to make this service work.')
+      cy.contains('We’d also like to use analytics cookies so we can understand how you use the service and make improvements.')
+      cy.contains('Accept analytics cookies');
+      cy.contains('Reject analytics cookies');
+      cy.contains('View cookies');
+  })
+  Cypress.Commands.add('cookiesPageContent',()=>{
+    cy.contains("This service puts small files (known as 'cookies') onto your computer. These cookies are used to:");
+    cy.contains('Change your cookie settings')
+    cy.contains('Do you want to accept analytics cookies?')
+
+  })
 
 // search by postcode
   Cypress.Commands.add('searchbypostcode', (postcode) => {
