@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-describe('| 🍪 CookiesTest |', function() {
+describe('|FHG-1116-FX-cookiesTest.spec - 🍪 CookiesTest |', function() {
   
     it(`Cookies Main Banner `, function() {
       cy.visit(`/cookies`);
