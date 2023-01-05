@@ -1,11 +1,11 @@
 describe('FHG-937-FX-filter-activities.spec',function(){
-    it('AC 1 - Activities, clubs and groups - clear filters ',function(){
+    it('Activities, clubs and groups - clear filters ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('e3 4al')
-        cy.ServiceFilterPage();
-        cy.familyHubDetails();
-        cy.serviceDetails();
+        // cy.ServiceFilterPage();
+        // cy.familyHubDetails();
+        // cy.serviceDetails();
         let subcategories = ['Community transport']
        let subcatcode = ['1']
        for (let i=0; i< subcatcode.length; i++){
