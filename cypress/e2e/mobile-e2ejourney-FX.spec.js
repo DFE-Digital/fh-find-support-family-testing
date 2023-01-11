@@ -6,20 +6,25 @@ describe('mobile-e2ejourney-FX.spec',function(){
         cy.visit('/');
         cy.dfeBrandingMobile()
 
+       
         cy.homepage();
         cy.dfeBrandingMobile()
-        
+
         cy.searchHubsPage()
         cy.dfeBrandingMobile()
-        
-        cy.searchbypostcode('e1 2en')
+
+        cy.searchbypostcode('m6 5uj')
         cy.dfeBrandingMobile()
-        
+
         cy.ServiceFilterPage();
         cy.dfeBrandingMobile()
-        
-        cy.familyHubDetails();
+
+        cy.mobFamilyHubDetails();
         cy.dfeBrandingMobile()
+
+        cy.mobServiceDetails();
+        cy.dfeBrandingMobile()
+
         // back button 
         cy.get('.govuk-back-link').click();
         cy.searchHubsPage();

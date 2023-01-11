@@ -35,6 +35,16 @@ beforeEach(() => {
     cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(5) > .govuk-summary-list__value').should('be.visible')
     
   })
+  Cypress.Commands.add('mobFamilyHubDetails',()=>{
+    cy.get('.app-family-hub').contains('This is your nearest family hub. You can drop in, meet others and find general services and activities in your area.')
+    cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(1) > .govuk-summary-list__key').should('be.visible')
+    cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(2) > .govuk-summary-list__key').should('be.visible')
+    cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(3) > .govuk-summary-list__key').should('be.visible')
+    cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(4) > .govuk-summary-list__key').should('be.visible')
+    cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(5) > .govuk-summary-list__key').should('be.visible')
+    
+  })
+  //
   Cypress.Commands.add('serviceDetails',()=>{
     cy.get('.app-family-hub').contains('This is your nearest family hub. You can drop in, meet others and find general services and activities in your area.')
     cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(1) > .govuk-summary-list__value').should('be.visible')
@@ -45,6 +55,17 @@ beforeEach(() => {
     cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(6) > .govuk-summary-list__value').should('be.visible')
     cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(7) > .govuk-summary-list__value').should('be.visible')
     cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(8) > .govuk-summary-list__value').should('be.visible')
+    })
+    Cypress.Commands.add('mobServiceDetails',()=>{
+    cy.get('.app-family-hub').contains('This is your nearest family hub. You can drop in, meet others and find general services and activities in your area.')
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(1) > .govuk-summary-list__key').should('be.visible')
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(2) > .govuk-summary-list__key').should('be.visible')
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(3) > .govuk-summary-list__key').should('be.visible')
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(4) > .govuk-summary-list__key').should('be.visible')
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(5) > .govuk-summary-list__key').should('be.visible')
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(6) > .govuk-summary-list__key').should('be.visible')
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(7) > .govuk-summary-list__key').should('be.visible')
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(8) > .govuk-summary-list__key').should('be.visible')
     })
   // cookies text
   Cypress.Commands.add('cookies',()=>{
