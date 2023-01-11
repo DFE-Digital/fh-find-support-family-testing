@@ -11,7 +11,7 @@ beforeEach(() => {
         })
     });
   Cypress.Commands.add('homepage',()=>{
-    cy.contains('Find local family support and services');
+    cy.contains('Find support for your family');
     cy.contains('You can find help, services and activities in your local area, including:');
     cy.get('.govuk-button.govuk-button--start').click();
   })
@@ -28,27 +28,27 @@ beforeEach(() => {
   })
   Cypress.Commands.add('familyHubDetails',()=>{
     cy.get('.app-family-hub').contains('This is your nearest family hub. You can drop in, meet others and find general services and activities in your area.')
-    cy.get('.app-family-hub > .govuk-summary-list.govuk-summary-list--no-border > div:nth-of-type(1) > .govuk-summary-list__value').should('be.visible')
-    cy.get('.app-family-hub > .govuk-summary-list.govuk-summary-list--no-border > div:nth-of-type(2) > .govuk-summary-list__value').should('be.visible')
-    cy.get('.app-family-hub > .govuk-summary-list.govuk-summary-list--no-border > div:nth-of-type(3) > .govuk-summary-list__value').should('be.visible')
-    cy.get('.app-family-hub > .govuk-summary-list.govuk-summary-list--no-border > div:nth-of-type(4) > .govuk-summary-list__value').should('be.visible')
-    cy.get('.app-family-hub > .govuk-summary-list.govuk-summary-list--no-border > div:nth-of-type(5) > .govuk-summary-list__value').should('be.visible')
-    cy.get('.app-family-hub > .govuk-summary-list.govuk-summary-list--no-border > div:nth-of-type(6) > .govuk-summary-list__value').should('be.visible')
+    cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(1) > .govuk-summary-list__value').should('be.visible')
+    cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(2) > .govuk-summary-list__value').should('be.visible')
+    cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(3) > .govuk-summary-list__value').should('be.visible')
+    cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(4) > .govuk-summary-list__value').should('be.visible')
+    cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(5) > .govuk-summary-list__value').should('be.visible')
+    
   })
   Cypress.Commands.add('serviceDetails',()=>{
     cy.get('.app-family-hub').contains('This is your nearest family hub. You can drop in, meet others and find general services and activities in your area.')
-    cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(1) > .govuk-summary-list__value').should('be.visible')
-    cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(2) > .govuk-summary-list__value').should('be.visible')
-    cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(3) > .govuk-summary-list__value').should('be.visible')
-    cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(4) > .govuk-summary-list__value').should('be.visible')
-    cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(5) > .govuk-summary-list__value').should('be.visible')
-    cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(6) > .govuk-summary-list__value').should('be.visible')
-    cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(7) > .govuk-summary-list__value').should('be.visible')
-    cy.get('.govuk-grid-column-two-thirds > dl:nth-of-type(1) > div:nth-of-type(8) > .govuk-summary-list__value').should('be.visible')
-  })
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(1) > .govuk-summary-list__value').should('be.visible')
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(2) > .govuk-summary-list__value').should('be.visible')
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(3) > .govuk-summary-list__value').should('be.visible')
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(4) > .govuk-summary-list__value').should('be.visible')
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(5) > .govuk-summary-list__value').should('be.visible')
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(6) > .govuk-summary-list__value').should('be.visible')
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(7) > .govuk-summary-list__value').should('be.visible')
+    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(8) > .govuk-summary-list__value').should('be.visible')
+    })
   // cookies text
   Cypress.Commands.add('cookies',()=>{
-     cy.contains('Cookies on find local family support')
+     cy.contains('Cookies on Find support for your family')
       cy.contains('We use some essential cookies to make this service work.')
       cy.contains('We’d also like to use analytics cookies so we can understand how you use the service and make improvements.')
       cy.contains('Accept analytics cookies');
@@ -108,15 +108,15 @@ Cypress.Commands.add('clearFilters',()=>{
 Cypress.Commands.add('familyhubsFilter',(selection)=>{
     cy.contains('Your local family hubs, services and activities')
     if (selection === 'familyhubs') {
-    cy.get("input#show--3").check();
+    cy.get("input#show--true").check();
     cy.get('div#filters > .govuk-button').click()
   } else if (selection === 'services'){
-    cy.get('input#show--1').check()
+    cy.get('input#show--false').check()
     cy.get('div#filters > .govuk-button').click()
   }
   else if (selection === 'Both'){
-    cy.get("input#show--3").check();
-    cy.get('input#show--1').check()
+    cy.get("input#show--true").check();
+    cy.get('input#show--false').check()
     cy.get('div#filters > .govuk-button').click()
   }
    })
@@ -131,7 +131,7 @@ Cypress.Commands.add('dfeBranding',()=>{
   cy.contains('Department for Education')
   cy.go(-1)
   cy.get('.govuk-header__logo').contains('Find support for your family').click()
-  cy.contains('Find local family support and services')
+  cy.contains('Find support for your family')
 
 })
 // dfe branding mobile
@@ -155,7 +155,6 @@ Cypress.Commands.add('activitiesFilter2',(selection1,selection2,selection3)=>{
    cy.get(`:nth-child(${selection1}) > .govuk-fieldset > .govuk-checkboxes > :nth-child(${selection2}) > .govuk-label`,{ multiple: true }).contains(`${selection3}`).click()
     cy.get('div#filters > .govuk-button').click()
 })
-
 
 // find item using pagination
 Cypress.Commands.add('findItem',(pageNumber)=>{

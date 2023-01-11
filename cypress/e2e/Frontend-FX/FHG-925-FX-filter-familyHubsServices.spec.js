@@ -2,7 +2,7 @@ describe('FHG-925-FX-filter-familyHubsServices.spec - Search by filter - familyh
     it('AC 1,3 familyhubs filter - No filter + Family hubs filter',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 5jy')
+        cy.searchbypostcode('e1 2en')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
@@ -21,7 +21,7 @@ describe('FHG-925-FX-filter-familyHubsServices.spec - Search by filter - familyh
     it('AC 2 Service and groups- filter',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 5jy')
+        cy.searchbypostcode('e1 2en')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails(); 
@@ -41,7 +41,7 @@ describe('FHG-925-FX-filter-familyHubsServices.spec - Search by filter - familyh
     it('AC 4 family hubs & Service and groups filter - Both , clear each filter ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 5jy')
+        cy.searchbypostcode('e1 2en')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
@@ -71,10 +71,10 @@ describe('FHG-925-FX-filter-familyHubsServices.spec - Search by filter - familyh
         cy.get('.govuk-grid-column-two-thirds').contains('Family hub').should('exist')
         cy.get('.govuk-grid-column-two-thirds').contains('Service and groups').should('exist')
     });
-    it('FHG-1634 - Post code with no Family hubs diaplays services',function(){
+    it('FHG-1634 - Post code with no Family hubs displays services',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('m27 8ss')
+        cy.searchbypostcode('e1 5np')
         cy.get('.govuk-grid-column-two-thirds').contains('Family hub').should('not.exist')
         cy.get('.govuk-grid-column-two-thirds').contains('Service and groups').should('exist')
         // no filters tagged

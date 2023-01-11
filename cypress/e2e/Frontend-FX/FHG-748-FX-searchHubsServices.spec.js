@@ -5,15 +5,15 @@ describe('FHG-748-FX-searchHubsServices.spec',function(){
         cy.searchHubsPage()
         cy.get('form > .govuk-button').click();
         cy.get('.govuk-error-summary').contains('There is a problem')
-        cy.get('.govuk-error-message').contains('You need to enter a postcode, like AA1 1AA')
+        cy.get('.govuk-error-message').contains('You need to enter a postcode, like SW1A 2AA')
          // enter valid postcode and it takes to next page
-        cy.searchbypostcode('e1 5jy')
+        cy.searchbypostcode('e1 2en')
         cy.ServiceFilterPage();
         cy.get('.govuk-back-link').click();
         // cy.go(-1)
        // back link takes back to landing page
         cy.get('.govuk-back-link').click();
-        cy.contains('Find local family support and services');
+        cy.contains('Find support for your family');
     })
     it('AC 3 - Invalid postcode entered + valid postcode',function(){
         cy.visit('/PostcodeSearch')
@@ -21,15 +21,15 @@ describe('FHG-748-FX-searchHubsServices.spec',function(){
         for(let i=0;i<postCode.length;i++){
             cy.searchbypostcode(`${postCode[i]}`)
             cy.get('.govuk-error-summary').contains('There is a problem')
-            cy.get('.govuk-error-summary').contains('You need to enter a valid postcode, like AA1 1AA')
+            cy.get('.govuk-error-summary').contains('You need to enter a valid postcode, like SW1A 2AA')
             // enter valid postcode and it takes to next page
-            cy.searchbypostcode('e1 5jy')
+            cy.searchbypostcode('e1 2en')
             cy.ServiceFilterPage();
             cy.go(-1)
         }
         // back link takes back to landing page
         cy.get('.govuk-back-link').click();
-        cy.contains('Find local family support and services');    
+        cy.contains('Find support for your family');    
     })
     it('AC 5,6 - Valid postcode format but not recognised + valid postcode',function(){
         cy.visit('/PostcodeSearch')
@@ -37,11 +37,11 @@ describe('FHG-748-FX-searchHubsServices.spec',function(){
         cy.get('.govuk-error-summary').contains('There is a problem')
         cy.get('.govuk-error-summary').contains('Your postcode is not recognised - try another one')
          // enter valid postcode and it takes to next page
-        cy.searchbypostcode('e1 5jy')
+        cy.searchbypostcode('e1 2en')
         cy.ServiceFilterPage();  
         cy.get('.govuk-back-link').click();
         // back link takes back to landing page
        cy.get('.govuk-back-link').click();
-        cy.contains('Find local family support and services');
+        cy.contains('Find support for your family');
     })
 })

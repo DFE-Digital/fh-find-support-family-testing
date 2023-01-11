@@ -2,7 +2,7 @@ describe('FHG-938-FX-clearFilters.spec',function(){
     it('AC 1 - clear filters',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 5jy')
+        cy.searchbypostcode('e1 2en')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();

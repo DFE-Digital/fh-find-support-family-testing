@@ -3,7 +3,7 @@ describe('smokeTest-FX.spec',function(){
         cy.visit('/');
         cy.homepage();
         cy.searchHubsPage()
-        cy.searchbypostcode('E1 5JY')
+        cy.searchbypostcode('e1 2en')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
