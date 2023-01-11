@@ -12,7 +12,7 @@ describe('mobile-e2ejourney-FX.spec',function(){
         cy.searchHubsPage()
         cy.dfeBrandingMobile()
         
-        cy.searchbypostcode('e1 5jy')
+        cy.searchbypostcode('e1 2en')
         cy.dfeBrandingMobile()
         
         cy.ServiceFilterPage();

@@ -2,7 +2,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
     it('AC 1 - default 20 miles distance - clear filters ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 5jy')
+        cy.searchbypostcode('e1 2en')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
@@ -21,7 +21,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
     it('AC 2 - filter by 1 miles distance ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 5jy')
+        cy.searchbypostcode('e1 2en')
         // cy.ServiceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
@@ -33,7 +33,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         cy.get('.moj-filter__selected').contains('1 mile').should('exist')
         // add validation 
         cy.get(':nth-child(4) > .govuk-link').click()
-        cy.get(':nth-child(19) > .govuk-summary-list__key > .govuk-heading-s').contains('0.98 miles')
+        cy.get(':nth-child(7) > :nth-child(1) > .govuk-summary-list__key > .govuk-heading-s').contains('1.0 miles')
         // apply free filter    
         cy.clearFilters()
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
@@ -44,7 +44,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
     it('AC 3 - filter by 2 miles distance ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 5jy')
+        cy.searchbypostcode('e1 2en')
         // cy.ServiceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
@@ -56,7 +56,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         cy.get('.moj-filter__selected').contains('2 miles').should('exist')
         // add validation 
         cy.get(':nth-child(4) > .govuk-link').click()
-       cy.get(':nth-child(13) > .govuk-summary-list__key > .govuk-heading-s').contains('1.97 miles')
+        cy.get('.govuk-summary-list__key > .govuk-heading-s').contains('2.0 miles')
         // apply free filter    
         cy.clearFilters()
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
@@ -67,7 +67,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
     it('AC 4 - filter by 5 miles distance ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('E1 5jy')
+        cy.searchbypostcode('e1 2en')
         // cy.ServiceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
@@ -79,7 +79,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         cy.get('.moj-filter__selected').contains('5 miles').should('exist')
         // add validation 
         cy.get(':nth-child(4) > .govuk-link').click()
-       cy.get(':nth-child(3) > .govuk-summary-list__key > .govuk-heading-s').contains('4.68 miles')
+        cy.get('.govuk-summary-list__key > .govuk-heading-s').contains('2.9 miles')
         // apply free filter    
         cy.clearFilters()
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
@@ -102,7 +102,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         cy.get('.moj-filter__selected').contains('10 miles').should('exist')
         // add validation 
         cy.get(':nth-child(4) > .govuk-link').click()
-       cy.get(':nth-child(15) > .govuk-summary-list__key > .govuk-heading-s').contains('9.61 miles')
+        cy.get('.govuk-summary-list__key > .govuk-heading-s').contains('2.9 miles')
         // apply free filter    
         cy.clearFilters()
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
@@ -113,7 +113,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
     it('AC 6 - filter by 20 miles distance ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('E1 5jy')
+        cy.searchbypostcode('e1 2en')
         // cy.ServiceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
@@ -125,7 +125,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         cy.get('.moj-filter__selected').contains('20 miles').should('exist')
          // add validation 
         cy.get(':nth-child(4) > .govuk-link').click()
-       cy.get(':nth-child(5) > .govuk-summary-list__key > .govuk-heading-s').contains('12.82 miles')
+        cy.get('.govuk-summary-list__key > .govuk-heading-s').contains('13.0 miles')
         // apply free filter    
         cy.clearFilters()
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
