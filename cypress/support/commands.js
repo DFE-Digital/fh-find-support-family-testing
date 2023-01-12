@@ -67,6 +67,14 @@ beforeEach(() => {
     cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(7) > .govuk-summary-list__key').should('be.visible')
     cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(8) > .govuk-summary-list__key').should('be.visible')
     })
+    // mobile open close filter
+    Cypress.Commands.add('mobOpenCloseFilters',()=>{
+      cy.get('#filters').should('be.visible')
+      cy.get('#open-close-filters').click()
+      cy.get('#filters').should('not.be.visible')
+
+
+    })
   // cookies text
   Cypress.Commands.add('cookies',()=>{
      cy.contains('Cookies on Find support for your family')
