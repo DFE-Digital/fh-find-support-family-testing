@@ -42,6 +42,8 @@ jobs:
           [ -e docs/fxtest/$DATE ] && rm -rf docs/fxtest/$DATE
           cp -a ../cypress/reports/html  docs/fxtest/$DATE
           pushd docs/fxtest/$DATE
+          rm -rf assets
+          rm -rf screenshots
           ln -s ../../assets/
           popd
           git add docs .
