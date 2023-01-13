@@ -22,7 +22,7 @@
     "tests": "yarn run pretests && (npm run alltests || npm run posttests)",
     "open:fx-dev": "CYPRESS_BASE_URL=https://s181d01-as-fh-sd-ui-dev.azurewebsites.net/ npx cypress open",
     "open:fx-test": "CYPRESS_BASE_URL=https://s181t01-as-fh-sd-ui-main.azurewebsites.net/ npx cypress open",
-    "open:proto": "CYPRESS_BASE_URL='https://fh-family-experience-prototyp.herokuapp.com/ npx cypress open",
+    "open:fx-prod": "CYPRESS_BASE_URL=https://find-support-for-your-family.education.gov.uk/ npx cypress open",
     "alltests:dev": "CYPRESS_BASE_URL=https://s181d01-as-fh-sd-ui-dev.azurewebsites.net// npx cypress run"
   }
 }
