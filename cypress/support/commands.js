@@ -72,8 +72,11 @@ beforeEach(() => {
       cy.get('#filters').should('be.visible')
       cy.get('#open-close-filters').click()
       cy.get('#filters').should('not.be.visible')
-
-
+    })
+    // feedback link
+    Cypress.Commands.add('feedbackLink',()=>{
+      cy.get('.govuk-phase-banner__text').contains('This is a new service, your feedback will help us improve it.')
+      cy.get('.govuk-phase-banner__text > a').should("have.attr", "href").and("include", "https://qfreeaccountssjc1.az1.qualtrics.com/jfe/form/SV_3aXYQWE1MKuhSya");
     })
   // cookies text
   Cypress.Commands.add('cookies',()=>{
