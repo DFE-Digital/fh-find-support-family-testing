@@ -1,5 +1,5 @@
-describe('FHG-937-FX-filter-activities.spec',function(){
-    it('Activities, clubs and groups - clear filters ',function(){
+describe('FHG-957-FX-filter-catTransport.spec',function(){
+    it('Transport - Community transport - clear filters ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('e3 4al')

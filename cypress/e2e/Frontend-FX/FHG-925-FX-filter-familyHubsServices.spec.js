@@ -74,7 +74,7 @@ describe('FHG-925-FX-filter-familyHubsServices.spec - Search by filter - familyh
     it('FHG-1634 - Post code with no Family hubs displays services',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 5np')
+        cy.searchbypostcode('m7 4bq')
         cy.get('.govuk-grid-column-two-thirds').contains('Family hub').should('not.exist')
         cy.get('.govuk-grid-column-two-thirds').contains('Service and groups').should('exist')
         // no filters tagged

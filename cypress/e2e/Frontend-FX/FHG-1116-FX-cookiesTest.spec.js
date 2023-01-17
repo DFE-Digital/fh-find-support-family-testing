@@ -52,7 +52,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
       cy.clearCookies();
       cy.visit(`/`);
       // view cookies
-      cy.get('.govuk-button-group > .govuk-link').click();
+      cy.get('.govuk-button-group > a').click();
       cy.cookiesPageContent()
       cy.get('#analytics-cookies-yes').click()
       cy.get('.js-cookies-page-form > .govuk-button').click()
@@ -73,7 +73,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
       cy.clearCookies();
       cy.visit(`/`);
       // view cookies
-      cy.get('.govuk-button-group > .govuk-link').click();
+      cy.get('.govuk-button-group > a').click();
       cy.cookiesPageContent()
       cy.get('#analytics-cookies-no').click()
       
@@ -149,7 +149,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
       cy.clearCookies();
       cy.visit(`/`);
       // view cookies
-      cy.get('.govuk-button-group > .govuk-link').click();
+      cy.get('.govuk-button-group > a').click();
       cy.cookiesPageContent()
       cy.get('#analytics-cookies-yes').click()
       cy.get('.js-cookies-page-form > .govuk-button').click()
@@ -171,7 +171,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
       cy.clearCookies();
       cy.visit(`/`);
       // view cookies
-      cy.get('.govuk-button-group > .govuk-link').click();
+      cy.get('.govuk-button-group > a').click();
       cy.cookiesPageContent()
       cy.get('#analytics-cookies-no').click()
       

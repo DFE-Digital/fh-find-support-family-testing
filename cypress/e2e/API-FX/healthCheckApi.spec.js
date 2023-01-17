@@ -7,7 +7,7 @@ describe('healthCheckApi.spec| ', function() {
           // Information Sharing
           expect(response.body.status).to.be.eq('Healthy');
           expect(response.body.entries.PostcodesIo.status).to.be.eq('Healthy')
-          expect(response.body.entries.PostcodesIo.status).to.be.eq('Healthy')
+          expect(response.body.entries.ServiceDirectoryAPI.status).to.be.eq('Healthy')
         });
   });
 })
