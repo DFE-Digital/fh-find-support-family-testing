@@ -6,7 +6,7 @@ describe('FHG-956-FX-filter-catSEND.spec',function(){
     it(`${subcategories[i]} - Special educational needs and disabilities (SEND) support category - clear filters `,function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 2en')
+        cy.searchbypostcode('e1 5jy')
         // cy.ServiceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
