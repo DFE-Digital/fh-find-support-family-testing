@@ -91,7 +91,25 @@ beforeEach(() => {
     cy.contains("This service puts small files (known as 'cookies') onto your computer. These cookies are used to:");
     cy.contains('Change your cookie settings')
     cy.contains('Do you want to accept analytics cookies?')
+    // back link
+    cy.get('.govuk-back-link').click()
+    cy.contains('You can find help, services and activities in your local area, including:');
 
+  })
+  // feedback page
+  Cypress.Commands.add('feedbackPage',()=>{
+    cy.contains('he purpose of this survey is to get your feedback on the ‘find support for your family’ website that the Department for Education has created for families and carers of young people. It should take no more than 5 minutes to complete.')
+  })
+  // terms and conditions page
+  Cypress.Commands.add('termsandconditionsPage',()=>{
+    cy.contains('Terms and conditions')
+    cy.contains('Who we are')
+    cy.contains('Find support for your family is managed by the Department for Education. The Department for Education will be referred to as ‘we’ from now on.')
+    cy.contains('Using Find support for your family')
+    cy.contains('Linking to Find support for your family')
+    // back link
+    cy.get('.govuk-back-link').click()
+    cy.contains('You can find help, services and activities in your local area, including:');
   })
 
 // search by postcode
@@ -178,6 +196,7 @@ Cypress.Commands.add('distanceFilter',(selection)=>{
 
 // activities filter
 Cypress.Commands.add('activitiesFilter',(selection1,selection2)=>{
+  //cy.get('#health--11696b1f-209a-47b1-9ef5-c588a14d43c6')
    cy.get(`:nth-child(${selection1}) > .govuk-fieldset > .govuk-checkboxes > :nth-child(${selection2}) > .govuk-label`,{ multiple: true }).click()
     cy.get('div#filters > .govuk-button').click()
 })
@@ -192,6 +211,33 @@ Cypress.Commands.add('activitiesFilter2',(selection1,selection2,selection3)=>{
 Cypress.Commands.add('findItem',(pageNumber)=>{
   cy.get(`:nth-child(${pageNumber}) > .govuk-link`).click()
   // cy.get(`[value="${pageNumber}"]`)
+})
+
+// contact us page 
+Cypress.Commands.add('contactUsPage',()=>{
+  cy.contains('Contact us')
+  cy.contains('Email')
+  cy.contains("find-family-support.service@education.gov.uk")
+  cy.contains("We aim to respond within 5 working days.")
+  // back link
+  cy.get('.govuk-back-link').click()
+  cy.contains('You can find help, services and activities in your local area, including:');
+})
+Cypress.Commands.add('accessibilityPage',()=>{
+  cy.contains('Accessibility statement')
+  cy.contains('How accessible this website is')
+  cy.contains('Feedback and contact information')
+  cy.contains('Reporting accessibility problems with this website')
+  cy.contains('Enforcement procedure')
+  cy.contains("Technical information about this website’s accessibility")
+  cy.contains('Compliance status')
+  cy.contains("What we\’re doing to improve accessibility")
+  cy.contains('Preparation of this accessibility statement')
+  // back link
+  cy.get('.govuk-back-link').click()
+  cy.contains('You can find help, services and activities in your local area, including:');
+
+
 })
 
 // custom command to overwrite baseUrl if we are using localhost etc
