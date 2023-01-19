@@ -11,7 +11,7 @@ describe('smokeTest-FX.spec',function(){
         cy.serviceDetails();
         cy.title()
     })
-    it('API - Health Check - API Status , postcodeIO ,SErviceDirectory', function() {
+    it('Health Check - API Status , postcodeIO ,SErviceDirectory', function() {
         cy.request('/health')
             .then((response) => {
         cy.validJsonAPIresponse(response);
