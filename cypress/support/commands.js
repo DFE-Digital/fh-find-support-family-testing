@@ -196,9 +196,11 @@ Cypress.Commands.add('distanceFilter',(selection)=>{
 
 // activities filter
 Cypress.Commands.add('activitiesFilter',(selection1,selection2)=>{
-  //cy.get('#health--11696b1f-209a-47b1-9ef5-c588a14d43c6')
-   cy.get(`:nth-child(${selection1}) > .govuk-fieldset > .govuk-checkboxes > :nth-child(${selection2}) > .govuk-label`,{ multiple: true }).click()
-    cy.get('div#filters > .govuk-button').click()
+  
+  //  cy.get(`:nth-child(${selection1}) > .govuk-fieldset > .govuk-checkboxes > :nth-child(${selection2}) > .govuk-label`,{ multiple: true }).click()
+  //   cy.get('div#filters > .govuk-button').click()
+  cy.get(`.app-sub-filters-scrollable > :nth-child(${selection1}) > .govuk-fieldset > .govuk-checkboxes > :nth-child(${selection2}) > .govuk-label`,{ multiple: true }).click()
+  cy.get('div#filters > .govuk-button').click()
 })
 //cy.get('#family-support--f11a9fdd-de48-499a-ac2d-2bd01dfc22f1')
 // activities filter 2
