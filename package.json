@@ -10,7 +10,7 @@
     "mochawesome-report-generator": "^6.2.0"
   },
   "scripts": {
-    "mocha-report": "yarn cypress run --spec \"cypress/e2e/**/test-e2e.spec.js\"",
+    "mocha-report": "yarn cypress run --spec \"cypress/e2e/**/test-e2e.cy.js\"",
     "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports && mkdir cypress/reports/mochareports",
     "pretests": "yarn run clean:reports",
     "scripts": "yarn cypress run",
