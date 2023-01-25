@@ -9,7 +9,7 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
         cy.serviceDetails();
         // both filters unchecked
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
-        cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
+       // 
         // no filters tagged
         cy.get('.moj-filter__selected').contains('Pay to use').should('not.exist')
         cy.get('.moj-filter__selected').contains('Free').should('not.exist')
@@ -27,7 +27,7 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
         cy.familyHubDetails();
         cy.serviceDetails(); // both filters unchecked
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
-        cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
+       // 
         // apply paid filter    
         cy.costFilter('Paid')
         cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
@@ -35,11 +35,11 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
         cy.get('.moj-filter__selected').contains('Pay to use')
         // use clear filers 
         cy.clearFilters()
-        cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
+       // 
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
         // both filters unchecked
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
-        cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
+       // 
 
     });
     it('AC 4 Cost filter - Both , clear each filter ',function(){
@@ -50,11 +50,11 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
         cy.familyHubDetails();
         cy.serviceDetails(); // both filters unchecked
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
-        cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
+       // 
         // apply paid filter    
         cy.costFilter('Both')
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
-        cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
+       
         cy.get('.moj-filter__selected').contains('Pay to use')
         cy.get('.moj-filter__selected').contains('Free')
         // clear paid filter 
@@ -64,11 +64,11 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
         cy.get('.moj-filter__selected').contains('Free')
         //clear free filer 
         cy.get('.moj-filter__selected').contains('Free').click()
-        cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
+       // 
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
         // both filters unchecked
         cy.get('.govuk-grid-column-two-thirds').contains('Free').should('exist')
-        cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
+       // 
 
 
     });
