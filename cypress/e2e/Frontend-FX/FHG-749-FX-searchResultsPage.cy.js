@@ -3,7 +3,7 @@ describe('FHG-749-FX-searchResultsPage.spec',function(){
         cy.visit('/');
         cy.homepage();
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 2en')
+        cy.searchbypostcode('m6 5uj')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
@@ -14,7 +14,7 @@ describe('FHG-749-FX-searchResultsPage.spec',function(){
     it('AC 3 search results page - post code link ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 2en')
+        cy.searchbypostcode('m6 5uj')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
@@ -25,7 +25,7 @@ describe('FHG-749-FX-searchResultsPage.spec',function(){
     it('service links to open in new window',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 2en')
+        cy.searchbypostcode('m6 5uj')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();

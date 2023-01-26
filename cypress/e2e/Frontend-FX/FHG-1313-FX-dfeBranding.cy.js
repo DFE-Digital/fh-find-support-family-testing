@@ -8,11 +8,11 @@ describe('FHG-1313-FX-dfeBranding.spec',function(){
         cy.get("a[role='button']").click();
         cy.dfeBranding()
         cy.get("a[role='button']").click();
-        cy.searchbypostcode('e1 2en')
+        cy.searchbypostcode('m6 5uj')
         cy.dfeBranding()
         cy.get("a[role='button']").click();
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 2en')
+        cy.searchbypostcode('m6 5uj')
         cy.ServiceFilterPage();
         cy.dfeBranding()
     })
