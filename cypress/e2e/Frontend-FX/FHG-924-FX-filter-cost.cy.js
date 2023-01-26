@@ -3,7 +3,7 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
        cy.visit('/');
         cy.homepage();
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 2en')
+        cy.searchbypostcode('m6 5uj')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
@@ -22,7 +22,7 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
     it('AC 2 Cost filter - Paid filter - Clear filters',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 2en')
+        cy.searchbypostcode('m6 5uj')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails(); // both filters unchecked
@@ -45,7 +45,7 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
     it('AC 4 Cost filter - Both , clear each filter ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 2en')
+        cy.searchbypostcode('m6 5uj')
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails(); // both filters unchecked

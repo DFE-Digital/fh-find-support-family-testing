@@ -19,7 +19,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
         cy.cookies();
         cy.searchHubsPage()
         cy.cookies();
-        cy.searchbypostcode('e1 2en')
+        cy.searchbypostcode('m6 5uj')
         cy.cookies();
         
     });
@@ -113,7 +113,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
         cy.cookies();
         cy.searchHubsPage()
         cy.cookies();
-        cy.searchbypostcode('e1 2en')
+        cy.searchbypostcode('m6 5uj')
         cy.cookies();
         
     });

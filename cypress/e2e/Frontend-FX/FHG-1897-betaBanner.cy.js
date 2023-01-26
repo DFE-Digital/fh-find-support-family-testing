@@ -6,7 +6,7 @@ describe('FHG-1897-betaBanner.spec',function(){
         cy.get("a[role='button']").click();
         cy.searchHubsPage()
         cy.feedbackLink()
-        cy.searchbypostcode('e1 2en')
+        cy.searchbypostcode('m6 5uj')
         cy.feedbackLink()
         cy.ServiceFilterPage();
         cy.feedbackLink()
