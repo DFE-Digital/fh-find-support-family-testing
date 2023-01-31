@@ -21,10 +21,12 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
         cy.cookies();
         cy.searchbypostcode('m6 5uj')
         cy.cookies();
+        cy.clearCookies();
         
     });
 
     it(`Accept Cookies ,Hide Banner`, function() {
+      cy.clearCookies();
       cy.visit(`/`);
       cy.contains('Accept analytics cookies').wait(500).click().wait(400);
       cy.get('.js-cookie-banner-confirmation-accept > .govuk-button-group > .govuk-button').wait(200).click();
@@ -55,6 +57,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
       cy.get('.govuk-button-group > a').click();
       cy.cookiesPageContent()
       cy.get('#analytics-cookies-yes').click()
+
       cy.get('.js-cookies-page-form > .govuk-button').click()
       cy.getCookie('service_directory_cookies_policy').should('not.be.empty')
       cy.getCookie('ARRAffinitySameSite').should('not.be.empty')
