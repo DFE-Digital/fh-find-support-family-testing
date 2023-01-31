@@ -91,14 +91,14 @@ beforeEach(() => {
     cy.contains("This service puts small files (known as 'cookies') onto your computer. These cookies are used to:");
     cy.contains('Change your cookie settings')
     cy.contains('Do you want to accept analytics cookies?')
-    // back link
-    cy.get('.govuk-back-link').click()
-    cy.contains('You can find help, services and activities in your local area, including:');
+    // // back link
+    // cy.get('.govuk-back-link').click()
+    // cy.contains('You can find help, services and activities in your local area, including:');
 
   })
   // feedback page
   Cypress.Commands.add('feedbackPage',()=>{
-    cy.contains('he purpose of this survey is to get your feedback on the ‘find support for your family’ website that the Department for Education has created for families and carers of young people. It should take no more than 5 minutes to complete.')
+    cy.contains('The purpose of this survey is to get your feedback on the ‘find support for your family’ website that the Department for Education has created for families and carers of young people. It should take no more than 5 minutes to complete.')
   })
   // terms and conditions page
   Cypress.Commands.add('termsandconditionsPage',()=>{

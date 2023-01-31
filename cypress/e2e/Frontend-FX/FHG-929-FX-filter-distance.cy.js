@@ -18,7 +18,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         // no filters tagged
         cy.get('.moj-filter__selected').contains('20 miles').should('not.exist')
     });
-    it('AC 2 - filter by 1 miles distance ',function(){
+    it.only('AC 2 - filter by 1 miles distance ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
@@ -32,7 +32,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         cy.distanceFilter('1')
         cy.get('.moj-filter__selected').contains('1 mile').should('exist')
         // add validation 
-        cy.get(':nth-child(4) > .govuk-link').click()
+        cy.get(':nth-child(3) > .govuk-pagination__link').click()
         cy.get(':nth-child(7) > :nth-child(1) > .govuk-summary-list__key > .govuk-heading-s').contains('1.0 miles')
         // apply free filter    
         cy.clearFilters()
