@@ -88,7 +88,9 @@ beforeEach(() => {
       cy.contains('View cookies');
   })
   Cypress.Commands.add('cookiesPageContent',()=>{
-    cy.contains("This service puts small files (known as 'cookies') onto your computer. These cookies are used to:");
+    cy.contains("Cookies are small files saved on your phone, tablet or computer when you visit a website.")
+
+    cy.contains("We use cookies to make Find support for your family work and collect information about how you use this website.")
     cy.contains('Change your cookie settings')
     cy.contains('Do you want to accept analytics cookies?')
     // // back link
@@ -115,7 +117,7 @@ beforeEach(() => {
 // search by postcode
   Cypress.Commands.add('searchbypostcode', (postcode) => {
     cy.get('input#postcode').clear().type(postcode);
-    cy.get('.govuk-button').contains('Search').click();
+    cy.get('form > .govuk-button').contains('Search').click();
 })
 // no results for postcode
 Cypress.Commands.add('noResultsPage',()=>{
@@ -138,15 +140,15 @@ Cypress.Commands.add('noResultsFilter',()=>{
 Cypress.Commands.add('costFilter',(selection)=>{
     cy.contains('Your local family hubs, services and activities')
     if (selection === 'Free') {
-    cy.get("input#cost--free").check();
+    cy.get("input#cost-free").check();
     cy.get('div#filters > .govuk-button').click()
   } else if (selection === 'Paid'){
-    cy.get('input#cost--pay-to-use').check()
+    cy.get('input#cost-pay-to-use').check()
     cy.get('div#filters > .govuk-button').click()
   }
   else if (selection === 'Both'){
-    cy.get("input#cost--free").check();
-    cy.get('input#cost--pay-to-use').check()
+    cy.get("input#cost-free").check();
+    cy.get('input#cost-pay-to-use').check()
     cy.get('div#filters > .govuk-button').click()
   }
    })
@@ -241,6 +243,20 @@ Cypress.Commands.add('accessibilityPage',()=>{
 
 
 })
+// distance cal
+Cypress.Commands.add('distanceCal',()=>{
+  cy.get(':nth-child(4) > :nth-child(1) > .govuk-summary-list__key > .govuk-heading-s').then(function($elem) {
+            let dist = $elem.text()
+            let dist1 = dist.substring(dist.length - 10)
+            let dist2 = dist1.substring(0,4)
+            
+            Number(dist2)
+            return dist2
+            // cy.log(dist2)
+            
+            })
+        
+        })
 
 // custom command to overwrite baseUrl if we are using localhost etc
 Cypress.Commands.overwrite('visit', (originalFn, url, options) => {
