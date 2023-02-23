@@ -74,7 +74,7 @@ describe('FHG-925-FX-filter-familyHubsServices.spec - Search by filter - familyh
     it('FHG-1634 - Post code with no Family hubs displays services',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('PR2 1QS')
+        cy.searchbypostcode('bs5 0sw')
         cy.get('.govuk-grid-column-two-thirds').contains('Family hub').should('not.exist')
         cy.get('.govuk-grid-column-two-thirds').contains('Service and groups').should('exist')
         // no filters tagged

@@ -2,7 +2,7 @@ describe('FHG-957-FX-filter-catTransport.spec',function(){
     it('Transport - Community transport - clear filters ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('e3 4al')
+        cy.searchbypostcode('bs5 0sw')
         // cy.ServiceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
