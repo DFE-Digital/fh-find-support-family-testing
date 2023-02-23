@@ -160,15 +160,15 @@ Cypress.Commands.add('clearFilters',()=>{
 Cypress.Commands.add('familyhubsFilter',(selection)=>{
     cy.contains('Your local family hubs, services and activities')
     if (selection === 'familyhubs') {
-    cy.get("input#show--true").check();
+    cy.get('#show-family-hubs').check();
     cy.get('div#filters > .govuk-button').click()
   } else if (selection === 'services'){
-    cy.get('input#show--false').check()
+    cy.get('#show-services').check()
     cy.get('div#filters > .govuk-button').click()
   }
   else if (selection === 'Both'){
-    cy.get("input#show--true").check();
-    cy.get('input#show--false').check()
+    cy.get('#show-family-hubs').check();
+    cy.get('#show-services').check()
     cy.get('div#filters > .govuk-button').click()
   }
    })
