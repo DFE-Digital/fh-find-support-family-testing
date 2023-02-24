@@ -6,7 +6,7 @@ describe('FHG-937-FX-filter-activities.spec -  Activities, clubs and groups cate
      it(`${subcategories[i]} - Activities, clubs and groups - clear filters`,function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('m6 5uj')
+        cy.searchbypostcode('bs5 0sw')
         // cy.ServiceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
