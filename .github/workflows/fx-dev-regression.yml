@@ -9,7 +9,7 @@ jobs:
   cypress-run:
     environment: famly-experience
     env:
-      CYPRESS_BASE_URL: "https://s181d01-as-fh-sd-ui-dev.azurewebsites.net/"
+      CYPRESS_BASE_URL: "https://find-support-for-your-family.education.gov.uk/"
     name: " 🛎️ RegressionTests - Family Experience - Azure Dev Environment "
     runs-on: ubuntu-22.04
     strategy:
