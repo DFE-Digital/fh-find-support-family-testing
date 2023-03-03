@@ -124,9 +124,11 @@ Cypress.Commands.add('noResultsPage',()=>{
   cy.contains('No results found')
   cy.contains('Sorry, there are no family hubs or services listed in your area yet.')
   cy.contains('You can check your council’s website for your local family support services.')
-  cy.get('.govuk-grid-column-two-thirds > :nth-child(3) > a').click()
-  cy.contains('Find your local council')
-  cy.go(-1)
+  cy.get('.govuk-grid-column-two-thirds > :nth-child(3) > a').should("have.attr", "href").and("include", "https://www.gov.uk/find-local-council");
+  // cy.get('main#main-content > .govuk-grid-row a').click()
+  // cy.contains('Find your local council')
+  // cy.go(-1)
+  
 })
 // no results for filter
 Cypress.Commands.add('noResultsFilter',()=>{
