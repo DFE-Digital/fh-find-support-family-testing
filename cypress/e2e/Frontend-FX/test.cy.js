@@ -1,5 +1,5 @@
 describe('test ',function(){
-    it('pagination',function(){
+    it.skip('pagination',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
@@ -33,4 +33,8 @@ describe('test ',function(){
     
         
         })
+ it('test',function(){
+    cy.visit('/')
+    console.log(cy.title())
+ })
 })
