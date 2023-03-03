@@ -100,7 +100,7 @@ beforeEach(() => {
   })
   // feedback page
   Cypress.Commands.add('feedbackPage',()=>{
-    cy.contains('The purpose of this survey is to get your feedback on the ‘find support for your family’ website that the Department for Education has created for families and carers of young people. It should take no more than 5 minutes to complete.')
+    cy.contains('The purpose of this anonymous survey is to get your feedback on the ‘Find support for your family’ website that the Department for Education has created for families and carers of young people. It should take no more than 5 minutes to complete.')
   })
   // terms and conditions page
   Cypress.Commands.add('termsandconditionsPage',()=>{
