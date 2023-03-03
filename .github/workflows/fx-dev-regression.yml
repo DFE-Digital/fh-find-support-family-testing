@@ -1,8 +1,6 @@
 name: " | Dev | FX Regression Pack | prod url modified |"
 
 on:
-  schedule:
-    - cron: "30 09 * * *"
   workflow_dispatch:
 
 jobs:
