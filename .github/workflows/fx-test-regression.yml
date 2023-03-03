@@ -1,6 +1,8 @@
 name: "| Test | FX Regression Pack | CIP test |"
 
 on:
+  schedule:
+    - cron: "30 07 * * *"
   workflow_dispatch:
 
 jobs:
