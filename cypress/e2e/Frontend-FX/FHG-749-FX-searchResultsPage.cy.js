@@ -30,7 +30,7 @@ describe('FHG-749-FX-searchResultsPage.spec',function(){
         cy.familyHubDetails();
         cy.serviceDetails();
         cy.get(':nth-child(4) > .govuk-summary-list__value > a').contains('Central Family Hub ')
-        cy.get(':nth-child(4) > .govuk-summary-list__value > a').should("have.attr", "href").and("include", "https://familyhubsnetwork.com/hub/central-family-hub-salford/");
+        cy.get(':nth-child(4) > .govuk-summary-list__value > a').should("have.attr", "href").and("include", "https://www.salford.gov.uk/children-and-families/early-help-for-families/family-hubs-childrens-centres/");
         
 
     })
