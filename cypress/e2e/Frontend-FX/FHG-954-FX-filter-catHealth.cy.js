@@ -7,7 +7,7 @@ describe('FHG-954-FX-filter-catHealth.spec',function(){
     it(`${subcategories[i]} - Health filters - clear filters `,function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('m6 5uj')
+        cy.searchbypostcode('bs2 0sp')
         // cy.ServiceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();

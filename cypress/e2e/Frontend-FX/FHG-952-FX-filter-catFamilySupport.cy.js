@@ -9,7 +9,7 @@ describe('FHG-952-FX-filter-familySupport.spec -  Filter Search Result by Family
     it(`${subcategories[i]} - Family Support filter - clear filters`,function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('m6 5uj')
+        cy.searchbypostcode('e1 2en')
         // cy.ServiceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
