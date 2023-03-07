@@ -97,13 +97,13 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
       cy.cookies();
     });
 
-    it(`${device[i]} No cookies selection made`, function() {
+    it(`Device name - ${device[i]} No cookies selection made`, function() {
       cy.viewport(`${device[i]}`)
       cy.visit(`/`);
       cy.getCookie('service_directory_cookies_policy').should('eq', null);
     });
 
-    it(`${device[i]} Cookies on all pages`, function() {
+    it(`Device name - ${device[i]} Cookies on all pages`, function() {
         cy.viewport(`${device[i]}`)
         cy.clearCookies();
         cy.visit(`/`);
@@ -117,7 +117,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
         
     });
 
-    it(`${device[i]} Accept Cookies ,Hide Banner`, function() {
+    it(`Device name - ${device[i]} Accept Cookies ,Hide Banner`, function() {
       cy.viewport(`${device[i]}`)
       cy.visit(`/`);
       cy.contains('Accept analytics cookies').wait(500).click().wait(400);
@@ -129,7 +129,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
       cy.clearCookies();
     });
 
-    it(`${device[i]} Reject Cookies ,Hide Banner`, function() {
+    it(`Device name - ${device[i]} Reject Cookies ,Hide Banner`, function() {
       cy.viewport(`${device[i]}`)
       cy.visit(`/`);
       cy.contains('Reject analytics cookies').wait(500).click().wait(400);
@@ -140,7 +140,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
       cy.clearCookies();
     });
 
-    it(`${device[i]} View Cookies - Yes Selection `, function() {
+    it(`Device name - ${device[i]} View Cookies - Yes Selection `, function() {
       cy.viewport(`${device[i]}`)
       cy.clearCookies();
       cy.visit(`/`);
@@ -161,7 +161,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
       cy.clearCookies();
     });
 
-    it(`${device[i]} View Cookies - No Selection `, function() {
+    it(`Device name - ${device[i]} View Cookies - No Selection `, function() {
       cy.viewport(`${device[i]}`)
       cy.clearCookies();
       cy.visit(`/`);

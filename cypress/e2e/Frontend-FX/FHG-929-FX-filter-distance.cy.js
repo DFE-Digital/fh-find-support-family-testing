@@ -1,5 +1,5 @@
 describe('FHG-929-FX-filter-distance.spec',function(){
-    it('AC 1 - default 20 miles distance - clear filters ',function(){
+    it.only('AC 1 - default 20 miles distance - clear filters ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
@@ -18,7 +18,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         // no filters tagged
         cy.get('.moj-filter__selected').contains('20 miles').should('not.exist')
     });
-    it.only('AC 2 - filter by 1 miles distance ',function(){
+    it('AC 2 - filter by 1 miles distance ',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
