@@ -91,7 +91,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
   let device = ['iphone-x','ipad-mini','samsung-s10']
         for(let i=0;i<device.length;i++){
   
-    it(`${device[i]} Cookies Main Banner `, function() {
+    it(`Device name - ${device[i]} Cookies Main Banner `, function() {
       cy.viewport(`${device[i]}`)
       cy.visit(`/cookies`);
       cy.cookies();
