@@ -7,7 +7,7 @@ describe('FHG-955-FX-filter-catPregnancyBirthEarlyYears.spec',function(){
     it(`${subcategories[i]} - Pregnancy Birth and Early Years filter - clear filters `,function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('e1 2en')
+        cy.searchbypostcode('pr2 1qs')
         // cy.ServiceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
