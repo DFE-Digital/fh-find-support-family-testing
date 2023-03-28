@@ -8,7 +8,7 @@ describe('FHG--FX-filter-age.spec - Age filter category',function(){
      it(`${subcategories[i]} - Children and young people - clear filters - validation ${allAges[i]}`,function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
-        cy.searchbypostcode('pr2 1qs')
+        cy.searchbypostcode('ig2 6fa')
         // cy.ServiceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
