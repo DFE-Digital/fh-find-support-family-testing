@@ -1,4 +1,4 @@
-name: " | Dev | FX Regression Pack | prod url modified |"
+name: " | Dev | FX Regression Pack |"
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ jobs:
     environment: famly-experience
     env:
       CYPRESS_BASE_URL: "https://find-support-for-your-family.education.gov.uk/"
-    name: " 🛎️ RegressionTests - Family Experience - Azure Dev Environment "
+    name: " 🛎️ RegressionTests - Family Experience -  Dev Environment "
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
