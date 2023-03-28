@@ -1,4 +1,4 @@
-name: " | Dev | FX Regression Pack |"
+name: " | Dev | Find Services - Regression Pack |"
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ jobs:
   cypress-run:
     environment: famly-experience
     env:
-      CYPRESS_BASE_URL: "https://find-support-for-your-family.education.gov.uk/"
+      CYPRESS_BASE_URL: "https://dev.find-support-for-your-family.education.gov.uk/"
     name: " 🛎️ RegressionTests - Family Experience -  Dev Environment "
     runs-on: ubuntu-22.04
     strategy:
