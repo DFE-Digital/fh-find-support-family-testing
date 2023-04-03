@@ -76,8 +76,11 @@ beforeEach(() => {
     })
     // feedback link
     Cypress.Commands.add('feedbackLink',()=>{
-      cy.get('.govuk-phase-banner__text').contains('This is a new service, your feedback will help us improve it.')
-      cy.get('.govuk-phase-banner__text > a').should("have.attr", "href").and("include", "https://qfreeaccountssjc1.az1.qualtrics.com/jfe/form/SV_3aXYQWE1MKuhSya");
+     cy.get('.govuk-footer__inline-list > :nth-child(4) > .govuk-footer__link')
+     .should('have.attr', 'href').and('include', 'https://dferesearch.fra1.qualtrics.com/jfe/form/SV_018DtsDZNNQteWa')
+     .then((href) => {
+       cy.visit(href)
+     })
     })
   // cookies text
   Cypress.Commands.add('cookies',()=>{
@@ -101,7 +104,12 @@ beforeEach(() => {
   })
   // feedback page
   Cypress.Commands.add('feedbackPage',()=>{
-    cy.contains('The purpose of this anonymous survey is to get your feedback on the ‘Find support for your family’ website that the Department for Education has created for families and carers of young people. It should take no more than 5 minutes to complete.')
+   cy.get('.govuk-footer__inline-list > :nth-child(4) > .govuk-footer__link')
+     .should('have.attr', 'href').and('include', 'https://dferesearch.fra1.qualtrics.com/jfe/form/SV_018DtsDZNNQteWa')
+     .then((href) => {
+       cy.visit(href)
+     })
+    
   })
   // terms and conditions page
   Cypress.Commands.add('termsandconditionsPage',()=>{
