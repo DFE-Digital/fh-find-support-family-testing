@@ -18,7 +18,6 @@ describe('FHG-1884-FX-footerLinks.spec - accessibility, contact us, cookies , fe
     })
     it('feedback page / link',function(){
         cy.visit('/')
-        cy.get('.govuk-footer__inline-list > :nth-child(4) > .govuk-footer__link').click()
         cy.feedbackPage()   
     })
     it('terms & conditions page / link',function(){
