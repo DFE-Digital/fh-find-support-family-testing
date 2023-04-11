@@ -29,8 +29,8 @@ describe('FHG-749-FX-searchResultsPage.spec',function(){
         cy.ServiceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
-        cy.get(':nth-child(4) > .govuk-summary-list__value > a').contains('Central Family Hub ')
-        cy.get(':nth-child(4) > .govuk-summary-list__value > a').should("have.attr", "href").and("include", "https://www.salford.gov.uk/children-and-families/early-help-for-families/family-hubs-childrens-centres/");
+        cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(4) > .govuk-summary-list__value > a').contains('Central Family Hub ')
+        cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(4) > .govuk-summary-list__value > a').should("have.attr", "href").and("include", "https://www.salford.gov.uk/children-and-families/early-help-for-families/family-hubs-childrens-centres/");
         
 
     })
