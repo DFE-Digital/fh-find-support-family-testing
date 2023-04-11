@@ -6,7 +6,6 @@ describe('mobile-e2ejourney-FX.spec',function(){
         cy.visit('/');
         cy.dfeBrandingMobile()
 
-       
         cy.homepage();
         cy.dfeBrandingMobile()
 

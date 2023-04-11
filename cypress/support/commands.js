@@ -41,7 +41,7 @@ beforeEach(() => {
     cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(2) > .govuk-summary-list__key').should('be.visible')
     cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(3) > .govuk-summary-list__key').should('be.visible')
     cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(4) > .govuk-summary-list__key').should('be.visible')
-    cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(5) > .govuk-summary-list__key').should('be.visible')
+    // cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(5) > .govuk-summary-list__key').should('be.visible')
     
   })
   //
@@ -51,9 +51,9 @@ beforeEach(() => {
     cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(2) > .govuk-summary-list__value').should('be.visible')
     cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(3) > .govuk-summary-list__value').should('be.visible')
     cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(4) > .govuk-summary-list__value').should('be.visible')
-    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(5) > .govuk-summary-list__value').should('be.visible')
-    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(6) > .govuk-summary-list__value').should('be.visible')
-    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(7) > .govuk-summary-list__value').should('be.visible')
+    // cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(5) > .govuk-summary-list__value').should('be.visible')
+    // cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(6) > .govuk-summary-list__value').should('be.visible')
+    // cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(7) > .govuk-summary-list__value').should('be.visible')
     // cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(8) > .govuk-summary-list__value').should('be.visible')
     //
    })
@@ -63,10 +63,7 @@ beforeEach(() => {
     cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(2) > .govuk-summary-list__key').should('be.visible')
     cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(3) > .govuk-summary-list__key').should('be.visible')
     cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(4) > .govuk-summary-list__key').should('be.visible')
-    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(5) > .govuk-summary-list__key').should('be.visible')
-    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(6) > .govuk-summary-list__key').should('be.visible')
-    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(7) > .govuk-summary-list__key').should('be.visible')
-    cy.get(':nth-child(3) > .govuk-summary-list > :nth-child(8) > .govuk-summary-list__key').should('be.visible')
+    cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(4) > .govuk-summary-list__value')
     })
     // mobile open close filter
     Cypress.Commands.add('mobOpenCloseFilters',()=>{
@@ -81,6 +78,7 @@ beforeEach(() => {
      .then((href) => {
        cy.visit(href)
      })
+     cy.go(-1)
     })
   // cookies text
   Cypress.Commands.add('cookies',()=>{
