@@ -15,7 +15,7 @@
     "pretests": "yarn run clean:reports",
     "scripts": "yarn cypress run",
     "alltests": "yarn cypress run",
-    "cy:report": "yarn run pretests && (npm run alltests || npm run posttests)",
+    
     "combine-reports": "mochawesome-merge ./cypress/reports/mocha > ./mochareports/report.json",
     "generate-report": "marge mochareports/*.json --reportDir mochawesome --assetDir mochawesome/assets --reportPageTitle index.html",
     "posttests": "yarn run combine-reports && npm run generate-report",
@@ -25,7 +25,12 @@
     "open:fx-test": "CYPRESS_BASE_URL=https://test.find-support-for-your-family.education.gov.uk/ npx cypress open",
     "open:fx-prod": "CYPRESS_BASE_URL=https://find-support-for-your-family.education.gov.uk/ npx cypress open",
     "alltests:dev": "CYPRESS_BASE_URL=https://s181d01-as-fh-sd-ui-dev.azurewebsites.net// npx cypress run",
-    "cy:parallel": "cypress-parallel -s scripts -t 2 -d CYPRESS_BASE_URL=https://test.find-support-for-your-family.education.gov.uk/"
+    "cy:parallel": "cypress-parallel -s scripts -t 2 -d CYPRESS_BASE_URL=https://test.find-support-for-your-family.education.gov.uk/",
+    
+    "pretests1": "npm run clean:reports",
+    "alltests1": "npm cypress run",
+    "posttests1": "npm run combine-reports && npm run generate-report",
+    "cy:report": "npm run pretests1 && (npm run alltests1 || npm run posttests1)"
 
   },
   "dependencies": {
