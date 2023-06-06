@@ -15,7 +15,7 @@
     "pretests": "yarn run clean:reports",
     "scripts": "yarn cypress run",
     "alltests": "yarn cypress run",
-    "cy:report": "cypress run",
+    "cy:report": "npx cypress run",
     "combine-reports": "mochawesome-merge ./cypress/reports/mocha > ./mochareports/report.json",
     "generate-report": "marge mochareports/*.json --reportDir mochawesome --assetDir mochawesome/assets --reportPageTitle index.html",
     "posttests": "yarn run combine-reports && npm run generate-report",
