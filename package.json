@@ -15,6 +15,7 @@
     "pretests": "yarn run clean:reports",
     "scripts": "yarn cypress run",
     "alltests": "yarn cypress run",
+    "cy:report": "cypress run",
     "combine-reports": "mochawesome-merge ./cypress/reports/mocha > ./mochareports/report.json",
     "generate-report": "marge mochareports/*.json --reportDir mochawesome --assetDir mochawesome/assets --reportPageTitle index.html",
     "posttests": "yarn run combine-reports && npm run generate-report",
@@ -23,6 +24,11 @@
     "open:fx-dev": "CYPRESS_BASE_URL=https://dev.find-support-for-your-family.education.gov.uk/ npx cypress open",
     "open:fx-test": "CYPRESS_BASE_URL=https://test.find-support-for-your-family.education.gov.uk/ npx cypress open",
     "open:fx-prod": "CYPRESS_BASE_URL=https://find-support-for-your-family.education.gov.uk/ npx cypress open",
-    "alltests:dev": "CYPRESS_BASE_URL=https://s181d01-as-fh-sd-ui-dev.azurewebsites.net// npx cypress run"
+    "alltests:dev": "CYPRESS_BASE_URL=https://s181d01-as-fh-sd-ui-dev.azurewebsites.net// npx cypress run",
+    "cy:parallel": "cypress-parallel -s scripts -t 2 -d CYPRESS_BASE_URL=https://test.find-support-for-your-family.education.gov.uk/"
+
+  },
+  "dependencies": {
+    "cypress-parallel": "^0.13.0"
   }
 }
