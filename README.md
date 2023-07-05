@@ -1,21 +1,24 @@
 # fh-family-experience-testing
+## Find support for your family
 
 This repository is responsible for validating / testing various applications on family-hubs/family-experience project
 
-[![ | Dev | FX Regression Pack | CIP dev |](https://github.com/DFE-Digital/fh-family-experience-testing/actions/workflows/fx-dev-regression.yml/badge.svg)](https://github.com/DFE-Digital/fh-family-experience-testing/actions/workflows/fx-dev-regression.yml)
+### Applications:
 
-[![| Test | FX Regression Pack | CIP test |](https://github.com/DFE-Digital/fh-family-experience-testing/actions/workflows/fx-test-regression.yml/badge.svg)](https://github.com/DFE-Digital/fh-family-experience-testing/actions/workflows/fx-test-regression.yml)
+- Family Experience 
 
-Applications:
-
-- FX UI
-
-Environments:
+### Environments:
 
 - development - develop branch
 - test - main branch
 
+### Regression 
 Regression suites for each of these environments are configured using github actions
+
+
+[![ | Dev | FX Regression Pack | CIP dev |](https://github.com/DFE-Digital/fh-family-experience-testing/actions/workflows/fx-dev-regression.yml/badge.svg)](https://github.com/DFE-Digital/fh-family-experience-testing/actions/workflows/fx-dev-regression.yml)
+
+[![| Test | FX Regression Pack | CIP test |](https://github.com/DFE-Digital/fh-family-experience-testing/actions/workflows/fx-test-regression.yml/badge.svg)](https://github.com/DFE-Digital/fh-family-experience-testing/actions/workflows/fx-test-regression.yml)
 
 ### Prerequisites
 
