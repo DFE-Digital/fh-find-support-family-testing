@@ -11,10 +11,10 @@ describe('FHG-747-FX-startNowPage.spec',function(){
         cy.contains('You will also be able to find your nearest family hub. They offer general family services and activities in your local area, and are a great place to start looking.');
         cy.homepage();
     });
-    it('AC 2 -Start now - Search for local family support and services',function(){
+    it('AC 2 -Start now - Search your local area for support and services',function(){
         cy.visit('/');
         cy.homepage();
-        cy.contains('Search for local family support and services')
+        cy.contains('Search your local area for support and services')
         // back button
         cy.get('.govuk-back-link').click()
         cy.homepage();

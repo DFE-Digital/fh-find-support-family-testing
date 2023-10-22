@@ -16,7 +16,7 @@ beforeEach(() => {
     cy.get('.govuk-button.govuk-button--start').click();
   })
   Cypress.Commands.add('searchHubsPage',()=>{
-    cy.contains('Search for local family support and services')
+    cy.contains('Search your local area for support and services')
     cy.contains('Use your postcode to find support, activities and services for:')
   })
   Cypress.Commands.add('ServiceFilterPage',()=>{
