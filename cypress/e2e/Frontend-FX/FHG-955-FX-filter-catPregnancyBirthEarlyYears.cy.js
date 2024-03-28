@@ -11,8 +11,8 @@ describe('FHG-955-FX-filter-catPregnancyBirthEarlyYears.spec',function(){
         // cy.ServiceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
-        
-        cy.activitiesFilter('4',`${subcatcode[i]}`)
+        let k = 31 + i;
+        cy.activitiesFilter('#pregnancy-'+k,`${subcatcode[i]}`)
         cy.get('.moj-filter__selected').contains(`${subcategories[i]}`).should('exist')
         cy.get('.govuk-grid-column-two-thirds').contains(`${subcategories[i]}`).should('exist')
         // validate family hubs dont show on top of the list 

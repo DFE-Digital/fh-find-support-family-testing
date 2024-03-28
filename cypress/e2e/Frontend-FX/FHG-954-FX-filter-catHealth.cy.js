@@ -11,8 +11,8 @@ describe('FHG-954-FX-filter-catHealth.spec',function(){
         // cy.ServiceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
-        
-        cy.activitiesFilter('3',`${subcatcode[i]}`)
+        let k = 26 + i;
+        cy.activitiesFilter('#health-'+k,`${subcatcode[i]}`)
         cy.get('.moj-filter__selected').contains(`${subcategories[i]}`).should('exist')
         cy.get('.govuk-grid-column-two-thirds').contains(`${subcategories[i]}`).should('exist')
         // validate family hubs dont show on top of the list 

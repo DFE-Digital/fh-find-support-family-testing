@@ -10,8 +10,9 @@ describe('FHG-956-FX-filter-catSEND.spec',function(){
         // cy.ServiceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
+        let k = 37 + i;
         
-        cy.activitiesFilter('5',`${subcatcode[i]}`)
+        cy.activitiesFilter('#send-'+k,`${subcatcode[i]}`)
         cy.get('.moj-filter__selected').contains(`${subcategories[i]}`).should('exist')
         cy.get('.govuk-grid-column-two-thirds').contains(`${subcategories[i]}`).should('exist')
         // validate family hubs dont show on top of the list 

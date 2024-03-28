@@ -13,8 +13,9 @@ describe('FHG-952-FX-filter-familySupport.spec -  Filter Search Result by Family
         // cy.ServiceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
+        let k = 14 + i;
         
-        cy.activitiesFilter('2',`${subcatcode[i]}`)
+        cy.activitiesFilter('#family-support-'+k,`${subcatcode[i]}`)
         cy.get('.moj-filter__selected').contains(`${subcategories[i]}`).should('exist')
         cy.get('.govuk-grid-column-two-thirds').contains(`${subcategories[i]}`).should('exist')
         // validate family hubs dont show on top of the list 

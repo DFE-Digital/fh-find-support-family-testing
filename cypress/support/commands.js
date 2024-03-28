@@ -31,7 +31,7 @@ beforeEach(() => {
     cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(1) > .govuk-summary-list__value').should('be.visible')
     cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(2) > .govuk-summary-list__value').should('be.visible')
     cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(3) > .govuk-summary-list__value').should('be.visible')
-    cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(4) > .govuk-summary-list__value').should('be.visible')
+    //cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(4) > .govuk-summary-list__value').should('be.visible')
     // cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(5) > .govuk-summary-list__value').should('be.visible')
     
   })
@@ -74,7 +74,7 @@ beforeEach(() => {
     // feedback link
     Cypress.Commands.add('feedbackLink',()=>{
      cy.get('.govuk-footer__inline-list > :nth-child(4) > .govuk-footer__link')
-     .should('have.attr', 'href').and('include', 'https://dferesearch.fra1.qualtrics.com/jfe/form/SV_018DtsDZNNQteWa')
+         .should('have.attr', 'href').and('include', 'https://dferesearch.fra1.qualtrics.com/jfe/form/SV_0HawZVFacdS60UC')
      .then((href) => {
        cy.visit(href)
      })
@@ -103,7 +103,7 @@ beforeEach(() => {
   // feedback page
   Cypress.Commands.add('feedbackPage',()=>{
    cy.get('.govuk-footer__inline-list > :nth-child(4) > .govuk-footer__link')
-     .should('have.attr', 'href').and('include', 'https://dferesearch.fra1.qualtrics.com/jfe/form/SV_018DtsDZNNQteWa')
+     .should('have.attr', 'href').and('include', 'https://dferesearch.fra1.qualtrics.com/jfe/form/SV_0HawZVFacdS60UC')
      .then((href) => {
        cy.visit(href)
      })
@@ -188,17 +188,17 @@ Cypress.Commands.add('transportFilter',()=>{
 })
 // dfe branding 
 Cypress.Commands.add('dfeBranding',()=>{
-  cy.get('.govuk-header__logo').contains('Department for Education').click()
+  cy.get('.dfe-header__logo').contains('Department for Education').click()
   cy.contains('Department for Education')
   cy.go(-1)
-  cy.get('.govuk-header__logo').contains('Find support for your family').click()
+  cy.get('.dfe-header__logo').contains('Find support for your family').click()
   cy.contains('Find support for your family')
 
 })
 // dfe branding mobile
 Cypress.Commands.add('dfeBrandingMobile',()=>{
-  cy.get('.govuk-header__logo').contains('Department for Education')
-  cy.get('.govuk-header__logo').contains('Find support for your family')
+  cy.get('.dfe-header__logo').contains('Department for Education')
+  cy.get('.dfe-header__logo').contains('Find support for your family')
 })
 Cypress.Commands.add('distanceFilter',(selection)=>{
     cy.get(`input#search_within--${selection}`).check();
@@ -210,7 +210,7 @@ Cypress.Commands.add('activitiesFilter',(selection1,selection2)=>{
   
   //  cy.get(`:nth-child(${selection1}) > .govuk-fieldset > .govuk-checkboxes > :nth-child(${selection2}) > .govuk-label`,{ multiple: true }).click()
   //   cy.get('div#filters > .govuk-button').click()
-  cy.get(`.app-sub-filters-scrollable > :nth-child(${selection1}) > .govuk-fieldset > .govuk-checkboxes > :nth-child(${selection2}) > .govuk-label`,{ multiple: true }).click()
+  cy.get(`${selection1}`, { multiple: true }).click()
   cy.get('div#filters > .govuk-button').click()
 })
 //cy.get('#family-support--f11a9fdd-de48-499a-ac2d-2bd01dfc22f1')
@@ -229,9 +229,9 @@ Cypress.Commands.add('findItem',(pageNumber)=>{
 // contact us page 
 Cypress.Commands.add('contactUsPage',()=>{
   cy.contains('Contact us')
-  cy.contains('Email')
-  cy.contains("find-family-support.service@education.gov.uk")
-  cy.contains("We aim to respond within 5 working days.")
+  cy.contains('email')
+  cy.contains("find-support-for-your-family.service@education.gov.uk")
+  cy.contains("We will aim to respond within 5 working days.")
   // back link
   cy.get('.govuk-back-link').click()
   cy.contains('You can find help, services and activities in your local area, including:');
