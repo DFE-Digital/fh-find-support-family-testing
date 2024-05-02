@@ -16,42 +16,42 @@ describe('serviceDirectoryApi.spec| ', function() {
         });
   });
    it('Organisations', function() {
-    cy.request('https://s181d01-as-fh-sd-api.azurewebsites.net/api/organisations')
+    cy.request('https://s181t01-as-fh-sd-api.azurewebsites.net/api/organisations')
         .then((response) => {
           cy.validJsonAPIresponse(response);
         });
     // specific organisation using id
-    cy.request('https://s181d01-as-fh-sd-api.azurewebsites.net/api/organisations/3')
+    cy.request('https://s181t01-as-fh-sd-api.azurewebsites.net/api/organisations/3')
         .then((response) => {
           cy.validJsonAPIresponse(response);
         });
   });
    it('Services', function() {
-    cy.request('https://s181d01-as-fh-sd-api.azurewebsites.net/api/services')
+    cy.request('https://s181t01-as-fh-sd-api.azurewebsites.net/api/services-simple')
         .then((response) => {
           cy.validJsonAPIresponse(response);
         });
     // service with id 
-    cy.request('https://s181d01-as-fh-sd-api.azurewebsites.net/api/services/1')
+    cy.request('https://s181t01-as-fh-sd-api.azurewebsites.net/api/services-simple/1')
         .then((response) => {
           cy.validJsonAPIresponse(response);
         });
 
   });
    it('Locations', function() {
-    cy.request('https://s181d01-as-fh-sd-api.azurewebsites.net/api/locations')
+    cy.request('https://s181t01-as-fh-sd-api.azurewebsites.net/api/locations')
         .then((response) => {
           cy.validJsonAPIresponse(response);
         });
     // specific location 
-     cy.request('https://s181d01-as-fh-sd-api.azurewebsites.net/api/locations/1')
+     cy.request('https://s181t01-as-fh-sd-api.azurewebsites.net/api/locations/1')
         .then((response) => {
           cy.validJsonAPIresponse(response);
         });
   });
   it('Organisation locations', function() {
     // specific organisation location 
-     cy.request('https://s181d01-as-fh-sd-api.azurewebsites.net/api/organisationlocations/1')
+     cy.request('https://s181t01-as-fh-sd-api.azurewebsites.net/api/organisationlocations/1')
         .then((response) => {
           cy.validJsonAPIresponse(response);
         });
