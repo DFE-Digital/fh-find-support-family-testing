@@ -8,7 +8,7 @@ describe('FHG-954-FX-filter-catHealth.spec',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('pr2 1qs')
-        // cy.ServiceFilterPage();
+        // cy.serviceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
         let k = 26 + i;

@@ -4,7 +4,7 @@ describe('FHG-749-FX-searchResultsPage.spec',function(){
         cy.homepage();
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
-        cy.ServiceFilterPage();
+        cy.serviceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
         // back button 
@@ -15,7 +15,7 @@ describe('FHG-749-FX-searchResultsPage.spec',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
-        cy.ServiceFilterPage();
+        cy.serviceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
         // back button 
@@ -26,7 +26,7 @@ describe('FHG-749-FX-searchResultsPage.spec',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
-        cy.ServiceFilterPage();
+        cy.serviceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
        // cy.get('.app-family-hub > .app-service > .govuk-summary-list > :nth-child(4) > .govuk-summary-list__value > a').contains('Central Family Hub ')

@@ -3,7 +3,7 @@ describe('FHG-938-FX-clearFilters.spec',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
-        cy.ServiceFilterPage();
+        cy.serviceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
         // both filters unchecked

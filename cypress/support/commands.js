@@ -19,7 +19,7 @@ beforeEach(() => {
     cy.contains('Search your local area for support and services')
     cy.contains('Use your postcode to find support, activities and services for:')
   })
-  Cypress.Commands.add('ServiceFilterPage',()=>{
+  Cypress.Commands.add('serviceFilterPage',()=>{
     cy.contains('Your local family hubs, services and activities')
     cy.get('.app-family-hub').should('be.visible')
     cy.contains("Below are the nearest search results for services and groups in your area. These may take place at different locations, like family hubs, children's centres or community centres.")

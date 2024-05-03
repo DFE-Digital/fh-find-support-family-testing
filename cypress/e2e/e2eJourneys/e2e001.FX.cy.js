@@ -5,7 +5,7 @@ describe.skip('e2e001.FX.spec',function(){
         cy.get('.govuk-button').click();
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
-        cy.ServiceFilterPage();
+        cy.serviceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
     })

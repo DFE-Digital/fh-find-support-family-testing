@@ -9,7 +9,7 @@ describe.skip('FHG--FX-filter-age.spec - Age filter category',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('ig2 6fa')
-        // cy.ServiceFilterPage();
+        // cy.serviceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
         cy.get('input#children_and_young-option-selected').click()

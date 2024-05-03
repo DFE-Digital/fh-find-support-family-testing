@@ -1,18 +1,17 @@
 describe('FHG-955-FX-filter-catPregnancyBirthEarlyYears.spec',function(){
     //Pregnancy Birth and Early Years filter
-       let subcategories = ['Birth registration','Early years language and learning','Health visiting','Infant feeding support (including breastfeeding)','Midwife and maternity','Perinatal mental health support (pregnancy to one year post birth)']
-       let subcatcode = ['1','2','3','4','5','6']
+       let subcategories = ['Early years language and learning','Health visiting','Infant feeding support (including breastfeeding)','Midwife and maternity','Perinatal mental health support (pregnancy to one year post birth)']
+       let subcatcode = ['32','33','34','35','36']
        for (let i=0; i< subcatcode.length; i++){
     
     it(`${subcategories[i]} - Pregnancy Birth and Early Years filter - clear filters `,function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('pr2 1qs')
-        // cy.ServiceFilterPage();
+        // cy.serviceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
-        let k = 31 + i;
-        cy.activitiesFilter('#pregnancy-'+k,`${subcatcode[i]}`)
+        cy.activitiesFilter('#pregnancy-'+subcatcode[i],`${subcatcode[i]}`)
         cy.get('.moj-filter__selected').contains(`${subcategories[i]}`).should('exist')
         cy.get('.govuk-grid-column-two-thirds').contains(`${subcategories[i]}`).should('exist')
         // validate family hubs dont show on top of the list 
