@@ -7,7 +7,7 @@ describe('FHG-956-FX-filter-catSEND.spec',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('bs5 0sw')
-        // cy.ServiceFilterPage();
+        // cy.serviceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
         let k = 37 + i;

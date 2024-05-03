@@ -3,7 +3,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
-        cy.ServiceFilterPage();
+        cy.serviceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
 
@@ -19,7 +19,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
-        cy.ServiceFilterPage();
+        cy.serviceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
 
@@ -40,7 +40,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
-        cy.ServiceFilterPage();
+        cy.serviceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
 
@@ -59,7 +59,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
-        cy.ServiceFilterPage();
+        cy.serviceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
 
@@ -79,7 +79,7 @@ describe('FHG-929-FX-filter-distance.spec',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('E1 2EN')
-        cy.ServiceFilterPage();
+        cy.serviceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
 

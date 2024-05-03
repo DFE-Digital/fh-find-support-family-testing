@@ -3,7 +3,7 @@ describe('FHG-957-FX-filter-catTransport.spec',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('e1 2en')
-        // cy.ServiceFilterPage();
+        // cy.serviceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
         let subcategories = ['Community transport']

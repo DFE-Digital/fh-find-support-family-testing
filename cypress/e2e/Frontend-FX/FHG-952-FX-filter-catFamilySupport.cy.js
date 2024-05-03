@@ -10,7 +10,7 @@ describe('FHG-952-FX-filter-familySupport.spec -  Filter Search Result by Family
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('pr2 1qs')
-        // cy.ServiceFilterPage();
+        // cy.serviceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
         let k = 14 + i;

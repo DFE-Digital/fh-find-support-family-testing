@@ -15,8 +15,6 @@ cypress/reports
 cypress/mochawesome-report/assets
 *.log
 .env
-package-lock.json
-yarn.lock
 # from config, compiled .js files
 packages/config/src/*.js
 

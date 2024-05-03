@@ -8,7 +8,7 @@ describe('FHG-937-FX-filter-activities.spec -  Activities, clubs and groups cate
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode(`${postCodes[i]}`)
-        // cy.ServiceFilterPage();
+        // cy.serviceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
          let k = 7 + i;

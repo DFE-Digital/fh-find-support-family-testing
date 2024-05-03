@@ -8,7 +8,7 @@ describe('FHG-955-FX-filter-catPregnancyBirthEarlyYears.spec',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('pr2 1qs')
-        // cy.ServiceFilterPage();
+        // cy.serviceFilterPage();
         // cy.familyHubDetails();
         // cy.serviceDetails();
         cy.activitiesFilter('#pregnancy-'+subcatcode[i],`${subcatcode[i]}`)

@@ -4,7 +4,7 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
         cy.homepage();
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
-        cy.ServiceFilterPage();
+        cy.serviceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails();
 
@@ -21,13 +21,12 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
-        cy.ServiceFilterPage();
+        cy.serviceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails(); // both filters unchecked
 
         // apply paid filter    
         cy.costFilter('Paid')
-        cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
         cy.get('.govuk-grid-column-two-thirds').contains('£').should('exist')
         cy.get('.moj-filter__selected').contains('Pay to use')
         // use clear filers 
@@ -40,7 +39,7 @@ describe('FHG-924-FX-filter-cost.spec - Search by filter - Cost',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
         cy.searchbypostcode('m6 5uj')
-        cy.ServiceFilterPage();
+        cy.serviceFilterPage();
         cy.familyHubDetails();
         cy.serviceDetails(); // both filters unchecked
 
