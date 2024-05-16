@@ -16,7 +16,7 @@ describe('FHG-937-FX-filter-activities.spec -  Activities, clubs and groups cate
         cy.activitiesFilter('#activities-'+k,`${subcatcode[i]}`)
         cy.get('.moj-filter__selected').contains(`${subcategories[i]}`).should('exist')
         cy.get('.govuk-grid-column-two-thirds').contains(`${subcategories[i]}`).should('exist')
-        // validate family hubs doesn't show on top of the list
+        // validate familys hubs doesn't show on top of the list
         // cy.get('.app-family-hub').should('not.exist')
         
         // use clear filers 
