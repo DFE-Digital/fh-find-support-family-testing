@@ -21,7 +21,7 @@ beforeEach(() => {
   })
   Cypress.Commands.add('serviceFilterPage',()=>{
     cy.contains('Your local family hubs, services and activities')
-    cy.get('.app-family-hub').should('be.visible')
+    //cy.get('.app-family-hub').should('be.visible') --> removing this assertion as we have removed family hub functionality temporarily.
     cy.contains("Below are the nearest search results for services and groups in your area. These may take place at different locations, like family hubs, children's centres or community centres.")
     cy.get('.govuk-summary-list__row').contains('Service and groups')
     cy.get('.moj-filter').should('be.visible')

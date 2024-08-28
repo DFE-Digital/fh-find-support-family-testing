@@ -33,9 +33,11 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
 
       cy.getCookie('service_directory_cookies_policy').should('not.be.empty')
       cy.getCookie('service_directory_cookies_policy')
-        .should('have.property','value', '{"analytics":true,"version":1}')
+        .should('have.property','value', '%7B%22analytics%22%3Atrue%2C%22version%22%3A1%7D')
       cy.clearCookies();
     });
+
+
 
     it(`Reject Cookies ,Hide Banner`, function() {
       cy.visit(`/`);
@@ -43,7 +45,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
       cy.get('.js-cookie-banner-confirmation-reject > .govuk-button-group > .govuk-button').wait(200).click();
       cy.getCookie('service_directory_cookies_policy').should('not.be.empty')
       cy.getCookie('service_directory_cookies_policy')
-        .should('have.property','value', '{"analytics":false,"version":1}')  
+        .should('have.property','value', '%7B%22analytics%22%3Afalse%2C%22version%22%3A1%7D')  
       cy.clearCookies();
     });
 
@@ -58,7 +60,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
       cy.get('.js-cookies-page-form > .govuk-button').click()
       cy.getCookie('service_directory_cookies_policy').should('not.be.empty')
       cy.getCookie('service_directory_cookies_policy')
-        .should('have.property','value', '{"analytics":true,"version":1}')
+        .should('have.property','value', '%7B%22analytics%22%3Atrue%2C%22version%22%3A1%7D')
     
       
       cy.get('.govuk-notification-banner').contains('You’ve set your cookie preferences.');
@@ -79,7 +81,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
       cy.get('.js-cookies-page-form > .govuk-button').click()
       cy.getCookie('service_directory_cookies_policy').should('not.be.empty')
       cy.getCookie('service_directory_cookies_policy')
-        .should('have.property','value', '{"analytics":false,"version":1}')  
+        .should('have.property','value', '%7B%22analytics%22%3Afalse%2C%22version%22%3A1%7D')  
       
       cy.get('.govuk-notification-banner').contains('You’ve set your cookie preferences.');
       cy.get('.govuk-notification-banner').contains('Go back to the page you were looking at').click();
@@ -125,7 +127,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
 
       cy.getCookie('service_directory_cookies_policy').should('not.be.empty')
      cy.getCookie('service_directory_cookies_policy')
-        .should('have.property','value', '{"analytics":true,"version":1}')
+        .should('have.property','value', '%7B%22analytics%22%3Atrue%2C%22version%22%3A1%7D')
       cy.clearCookies();
     });
 
@@ -136,7 +138,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
       cy.get('.js-cookie-banner-confirmation-reject > .govuk-button-group > .govuk-button').wait(200).click();
       cy.getCookie('service_directory_cookies_policy').should('not.be.empty')
       cy.getCookie('service_directory_cookies_policy')
-        .should('have.property','value', '{"analytics":false,"version":1}')   
+        .should('have.property','value', '%7B%22analytics%22%3Afalse%2C%22version%22%3A1%7D')   
       cy.clearCookies();
     });
 
@@ -151,7 +153,7 @@ describe('|FHG-1116-FX-cookiesTest.spec - CookiesTest |', function() {
       cy.get('.js-cookies-page-form > .govuk-button').click()
       cy.getCookie('service_directory_cookies_policy').should('not.be.empty')
       cy.getCookie('service_directory_cookies_policy')
-        .should('have.property','value', '{"analytics":true,"version":1}')
+        .should('have.property','value', '%7B%22analytics%22%3Atrue%2C%22version%22%3A1%7D')
     
       
       cy.get('.govuk-notification-banner').contains('You’ve set your cookie preferences.');

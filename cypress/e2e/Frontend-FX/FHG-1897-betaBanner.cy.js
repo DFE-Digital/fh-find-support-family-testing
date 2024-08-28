@@ -9,8 +9,5 @@ describe('FHG-1897-betaBanner.spec',function(){
         cy.feedbackLink()
         cy.searchbypostcode('m6 5uj')
         cy.feedbackLink()
-        cy.serviceFilterPage();
-        cy.feedbackLink()
-       
     })
 })
