@@ -1,4 +1,5 @@
-describe('FHG-1391-FX-openingHours.spec',function(){
+// Skipping as we have removed the family hubs blue functionality from Find as part of a temporary bug fix.
+describe.skip('FHG-1391-FX-openingHours.spec',function(){
     it('when / opening hours',function(){
         cy.visit('/PostcodeSearch')
         cy.searchHubsPage()
